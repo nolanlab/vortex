@@ -1,0 +1,173 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package vortex.clustergraph;
+
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import org.gephi.graph.api.Node;
+import org.gephi.graph.api.UndirectedGraph;
+
+/**
+ *
+ * @author Nikolay Samusik
+ */
+public class GraphRenderer extends javax.swing.JPanel {
+
+    private UndirectedGraph graph = null;
+    private boolean showEdges = true;
+    private int nodeSize = 2;
+
+    public void setNodeSize(int nodeSize) {
+        this.nodeSize = nodeSize;
+    }
+
+    public int getNodeSize() {
+        return nodeSize;
+    }
+
+    public void showEdges(boolean showEdges) {
+        this.showEdges = showEdges;
+    }
+
+    /**
+     * Creates new form GraphRenderer
+     */
+    public GraphRenderer() {
+        initComponents();
+
+        setBackground(Color.WHITE);
+    }
+
+    public void setGraph(UndirectedGraph graph) {
+        this.graph = graph;
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g); //To change body of generated methods, choose Tools | Templates.
+        if (graph == null) {
+            return;
+        }
+
+        if (graph.getNodeCount() == 0) {
+            return;
+        }
+
+        Node[] nodes = graph.getNodes().toArray();
+        
+        if(nodes.length < 1) return;
+
+        float minX = nodes[0].getNodeData().x(), maxX = nodes[0].getNodeData().x(), minY = nodes[0].getNodeData().y(), maxY = nodes[0].getNodeData().y();
+
+        for (Node n : nodes) {
+            minX = Math.min(minX, n.getNodeData().x());
+            maxX = Math.max(maxX, n.getNodeData().x());
+            minY = Math.min(minY, n.getNodeData().y());
+            maxY = Math.max(maxY, n.getNodeData().y());
+        }
+
+        BufferedImage bi = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = (Graphics2D)bi.createGraphics();
+
+        maxX += nodeSize * 2;
+        minX -= nodeSize * 2;
+        maxY += nodeSize * 2;
+        minY -= nodeSize * 2;
+
+        float scaleX = this.getWidth() / (maxX - minX);
+        float scaleY = this.getHeight() / (maxY - minY);
+
+        g2.setColor(new Color(0,0,0,10));
+        for (Node n : nodes) {
+            
+            if(!graph.contains(n)) continue;
+            int x = (int) ((n.getNodeData().x() - minX) * scaleX);
+            int y = (int) ((n.getNodeData().y() - minY) * scaleY);
+
+            Node[] nei = graph.getNeighbors(n).toArray();
+
+            for (Node n2 : nei) {
+                if (n2.getId() < n.getId()|| !graph.contains(n2)) {
+                    continue;
+                }
+                int x2 = (int) ((n2.getNodeData().x() - minX) * scaleX);
+                int y2 = (int) ((n2.getNodeData().y() - minY) * scaleY);
+                g2.setStroke(new BasicStroke((getNodeSize()/4.0f)*graph.getEdge(n, n2).getWeight()));
+                g2.drawLine(x, y, x2, y2);
+            }
+
+        }
+        for (Node n : nodes) {
+            int x = (int) ((n.getNodeData().x() - minX) * scaleX);
+            int y = (int) ((n.getNodeData().y() - minY) * scaleY);
+
+            if (x > 0 && y > 0 && x < bi.getWidth() && y < bi.getHeight()) {
+                int argb = getARGBInt(200, ((int) (n.getNodeData().r() * 255)), ((int) (n.getNodeData().g() * 255)), ((int) (n.getNodeData().b() * 255)));
+                bi.setRGB((int) x, (int) y, argb);
+            }
+            if (x > nodeSize && y > nodeSize && x < bi.getWidth() - nodeSize && y < bi.getHeight() - nodeSize) {
+                int argb2 = getARGBInt(150, ((int) (n.getNodeData().r() * 255)), ((int) (n.getNodeData().g() * 255)), ((int) (n.getNodeData().b() * 255)));
+                int argb3 = getARGBInt(100, ((int) (n.getNodeData().r() * 255)), ((int) (n.getNodeData().g() * 255)), ((int) (n.getNodeData().b() * 255)));
+
+                for (int oX = -nodeSize; oX <= nodeSize; oX++) {
+                    for (int oY = -nodeSize; oY <= nodeSize; oY++) {
+                        if (Math.abs(oX) == nodeSize && Math.abs(oY) == nodeSize) {
+                            continue;
+                        }
+
+                        int col = (Math.abs(oX) == nodeSize || Math.abs(oY) == nodeSize) ? argb3 : argb2;
+                        bi.setRGB((int) x + oX, (int) y + oY, col);
+                    }
+                }
+
+            }
+        }
+
+        g.drawImage(bi, 0, 0, null);
+
+    }
+
+    public static int getARGBInt(int a, int r, int g, int b) {
+        int color = 0;
+        color |= a << 24;
+
+        color |= r << 16;
+
+        color |= g << 8;
+
+        color |= b;
+
+        return color;
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // End of variables declaration//GEN-END:variables
+}
