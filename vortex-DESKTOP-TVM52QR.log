@@ -1,0 +1,318 @@
+May 18, 2017 2:07:05 PM java.util.prefs.WindowsPreferences <init>
+WARNING: Could not open/create prefs root node Software\JavaSoft\Prefs at root 0x80000002. Windows RegCreateKeyEx(...) returned error code 5.
+HSQLDB storage engine init done.
+Connected to: jdbc:hsqldb:file:I:/Nikolay/41-parameter 16 cycles melanoma Nikolay 4-18-17/analysis/VorteX DB/melanoma;shutdown=true, usr: sa sapassword 0 characters long
+Database version:2.0.1
+keeping edge:org.gephi.graph.impl.NodeImpl@d1c1<->org.gephi.graph.impl.NodeImpl@d2200.7349634872368682
+keeping edge:org.gephi.graph.impl.NodeImpl@d1c8<->org.gephi.graph.impl.NodeImpl@d23b0.9325269308577057
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a2<->org.gephi.graph.impl.NodeImpl@d23c2.0886494893263214
+keeping edge:org.gephi.graph.impl.NodeImpl@d200<->org.gephi.graph.impl.NodeImpl@d2032.5951776389985195
+keeping edge:org.gephi.graph.impl.NodeImpl@d1e2<->org.gephi.graph.impl.NodeImpl@d27a2.7859166314799433
+keeping edge:org.gephi.graph.impl.NodeImpl@d243<->org.gephi.graph.impl.NodeImpl@d25a2.903246901873123
+keeping edge:org.gephi.graph.impl.NodeImpl@d203<->org.gephi.graph.impl.NodeImpl@d21f2.9440995700648904
+keeping edge:org.gephi.graph.impl.NodeImpl@cee0<->org.gephi.graph.impl.NodeImpl@d2033.0626771037336584
+keeping edge:org.gephi.graph.impl.NodeImpl@cee0<->org.gephi.graph.impl.NodeImpl@d2633.164484705867626
+keeping edge:org.gephi.graph.impl.NodeImpl@d1e6<->org.gephi.graph.impl.NodeImpl@d2803.3163848200189836
+keeping edge:org.gephi.graph.impl.NodeImpl@d205<->org.gephi.graph.impl.NodeImpl@d1de3.354833752486205
+keeping edge:org.gephi.graph.impl.NodeImpl@d241<->org.gephi.graph.impl.NodeImpl@d1e03.4261438281726058
+keeping edge:org.gephi.graph.impl.NodeImpl@d221<->org.gephi.graph.impl.NodeImpl@d2013.4718191716119113
+keeping edge:org.gephi.graph.impl.NodeImpl@d1c0<->org.gephi.graph.impl.NodeImpl@d1de3.4747501666542515
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a9<->org.gephi.graph.impl.NodeImpl@d2003.484026069887278
+keeping edge:org.gephi.graph.impl.NodeImpl@d204<->org.gephi.graph.impl.NodeImpl@d27b3.539507004296063
+keeping edge:org.gephi.graph.impl.NodeImpl@d1c7<->org.gephi.graph.impl.NodeImpl@d2423.5643196745619248
+keeping edge:org.gephi.graph.impl.NodeImpl@d21c<->org.gephi.graph.impl.NodeImpl@d2423.568413867985941
+keeping edge:org.gephi.graph.impl.NodeImpl@d29b<->org.gephi.graph.impl.NodeImpl@d2983.5700269921771164
+keeping edge:org.gephi.graph.impl.NodeImpl@d23e<->org.gephi.graph.impl.NodeImpl@d25c3.5729232584451385
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a8<->org.gephi.graph.impl.NodeImpl@d1883.5842759862359923
+keeping edge:org.gephi.graph.impl.NodeImpl@d221<->org.gephi.graph.impl.NodeImpl@d2443.590387664818491
+keeping edge:org.gephi.graph.impl.NodeImpl@d240<->org.gephi.graph.impl.NodeImpl@d1e03.61672301579234
+keeping edge:org.gephi.graph.impl.NodeImpl@d1c0<->org.gephi.graph.impl.NodeImpl@d27a3.6183809937251916
+keeping edge:org.gephi.graph.impl.NodeImpl@d1e5<->org.gephi.graph.impl.NodeImpl@d2803.628600899742892
+keeping edge:org.gephi.graph.impl.NodeImpl@d1c3<->org.gephi.graph.impl.NodeImpl@d1a53.637439162874772
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a9<->org.gephi.graph.impl.NodeImpl@d1c43.6440627126837195
+keeping edge:org.gephi.graph.impl.NodeImpl@cede<->org.gephi.graph.impl.NodeImpl@d1873.6447526402664674
+keeping edge:org.gephi.graph.impl.NodeImpl@d23b<->org.gephi.graph.impl.NodeImpl@d1813.6528028264702472
+keeping edge:org.gephi.graph.impl.NodeImpl@d25f<->org.gephi.graph.impl.NodeImpl@d1e13.6611346758524745
+keeping edge:org.gephi.graph.impl.NodeImpl@d181<->org.gephi.graph.impl.NodeImpl@d25f3.6827051230329193
+keeping edge:org.gephi.graph.impl.NodeImpl@d21c<->org.gephi.graph.impl.NodeImpl@d2063.682800142386584
+keeping edge:org.gephi.graph.impl.NodeImpl@d1ff<->org.gephi.graph.impl.NodeImpl@d1e63.6867707961056446
+keeping edge:org.gephi.graph.impl.NodeImpl@d29f<->org.gephi.graph.impl.NodeImpl@d29b3.6883946873714426
+keeping edge:org.gephi.graph.impl.NodeImpl@d281<->org.gephi.graph.impl.NodeImpl@d25d3.696469618434828
+keeping edge:org.gephi.graph.impl.NodeImpl@d188<->org.gephi.graph.impl.NodeImpl@d27f3.7004846728893366
+keeping edge:org.gephi.graph.impl.NodeImpl@d280<->org.gephi.graph.impl.NodeImpl@d2983.703670618635391
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a8<->org.gephi.graph.impl.NodeImpl@d2983.704632160521735
+keeping edge:org.gephi.graph.impl.NodeImpl@cede<->org.gephi.graph.impl.NodeImpl@cee03.7064643973982383
+keeping edge:org.gephi.graph.impl.NodeImpl@d23f<->org.gephi.graph.impl.NodeImpl@d2443.7079769719702838
+keeping edge:org.gephi.graph.impl.NodeImpl@cedf<->org.gephi.graph.impl.NodeImpl@d2793.7141052549516584
+keeping edge:org.gephi.graph.impl.NodeImpl@d299<->org.gephi.graph.impl.NodeImpl@d27f3.7179551967585556
+keeping edge:org.gephi.graph.impl.NodeImpl@d1c2<->org.gephi.graph.impl.NodeImpl@d1c63.7300747117207464
+keeping edge:org.gephi.graph.impl.NodeImpl@d282<->org.gephi.graph.impl.NodeImpl@d2603.73983997606803
+keeping edge:org.gephi.graph.impl.NodeImpl@d1e0<->org.gephi.graph.impl.NodeImpl@d25c3.7501158058105877
+keeping edge:org.gephi.graph.impl.NodeImpl@d23f<->org.gephi.graph.impl.NodeImpl@d1843.764064652835579
+keeping edge:org.gephi.graph.impl.NodeImpl@d1bf<->org.gephi.graph.impl.NodeImpl@d1c13.767309876402696
+keeping edge:org.gephi.graph.impl.NodeImpl@d1e5<->org.gephi.graph.impl.NodeImpl@d1e03.7683788513310725
+keeping edge:org.gephi.graph.impl.NodeImpl@d21e<->org.gephi.graph.impl.NodeImpl@d1c53.7735159599147075
+keeping edge:org.gephi.graph.impl.NodeImpl@d1e3<->org.gephi.graph.impl.NodeImpl@d25f3.7744176285577846
+keeping edge:org.gephi.graph.impl.NodeImpl@d181<->org.gephi.graph.impl.NodeImpl@d1df3.781505821353896
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a6<->org.gephi.graph.impl.NodeImpl@d2993.7829229591914264
+keeping edge:org.gephi.graph.impl.NodeImpl@d225<->org.gephi.graph.impl.NodeImpl@d2243.801127644396866
+keeping edge:org.gephi.graph.impl.NodeImpl@d1de<->org.gephi.graph.impl.NodeImpl@d2043.805144463279159
+keeping edge:org.gephi.graph.impl.NodeImpl@d1c3<->org.gephi.graph.impl.NodeImpl@d1c23.8186981558435167
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a1<->org.gephi.graph.impl.NodeImpl@d25a3.821072397937353
+keeping edge:org.gephi.graph.impl.NodeImpl@d1c0<->org.gephi.graph.impl.NodeImpl@d1a33.8257674312429737
+keeping edge:org.gephi.graph.impl.NodeImpl@d224<->org.gephi.graph.impl.NodeImpl@d29c3.829716776932762
+keeping edge:org.gephi.graph.impl.NodeImpl@d23b<->org.gephi.graph.impl.NodeImpl@d23c3.8298972635578217
+keeping edge:org.gephi.graph.impl.NodeImpl@d21d<->org.gephi.graph.impl.NodeImpl@d2063.8349151092336857
+keeping edge:org.gephi.graph.impl.NodeImpl@d23b<->org.gephi.graph.impl.NodeImpl@d2613.8349496645794634
+keeping edge:org.gephi.graph.impl.NodeImpl@d23c<->org.gephi.graph.impl.NodeImpl@d25a3.8356240138486073
+keeping edge:org.gephi.graph.impl.NodeImpl@d202<->org.gephi.graph.impl.NodeImpl@d1c23.8361865727344724
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a7<->org.gephi.graph.impl.NodeImpl@d2613.836963546565889
+keeping edge:org.gephi.graph.impl.NodeImpl@d25d<->org.gephi.graph.impl.NodeImpl@d25a3.8479675233563673
+keeping edge:org.gephi.graph.impl.NodeImpl@d262<->org.gephi.graph.impl.NodeImpl@d1c53.8495904726574035
+keeping edge:org.gephi.graph.impl.NodeImpl@d29e<->org.gephi.graph.impl.NodeImpl@d29d3.8507626175089054
+keeping edge:org.gephi.graph.impl.NodeImpl@d225<->org.gephi.graph.impl.NodeImpl@d2793.852611386999302
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a4<->org.gephi.graph.impl.NodeImpl@d29a3.855919250199922
+keeping edge:org.gephi.graph.impl.NodeImpl@d1c1<->org.gephi.graph.impl.NodeImpl@d1c23.8559328288146064
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a4<->org.gephi.graph.impl.NodeImpl@d1a53.8561970021012884
+keeping edge:org.gephi.graph.impl.NodeImpl@d282<->org.gephi.graph.impl.NodeImpl@d29d3.8596676558023297
+keeping edge:org.gephi.graph.impl.NodeImpl@d222<->org.gephi.graph.impl.NodeImpl@d27d3.860180149465733
+keeping edge:org.gephi.graph.impl.NodeImpl@d1fd<->org.gephi.graph.impl.NodeImpl@d29e3.860766357787106
+keeping edge:org.gephi.graph.impl.NodeImpl@d21e<->org.gephi.graph.impl.NodeImpl@d1863.862368717624188
+keeping edge:org.gephi.graph.impl.NodeImpl@d1fe<->org.gephi.graph.impl.NodeImpl@d25e3.86449618030846
+keeping edge:org.gephi.graph.impl.NodeImpl@d280<->org.gephi.graph.impl.NodeImpl@d25a3.8682049275303325
+keeping edge:org.gephi.graph.impl.NodeImpl@d21d<->org.gephi.graph.impl.NodeImpl@d29b3.8706622694414943
+keeping edge:org.gephi.graph.impl.NodeImpl@d223<->org.gephi.graph.impl.NodeImpl@d27d3.8721569115917713
+keeping edge:org.gephi.graph.impl.NodeImpl@d18a<->org.gephi.graph.impl.NodeImpl@d27e3.8721957806700664
+keeping edge:org.gephi.graph.impl.NodeImpl@d29d<->org.gephi.graph.impl.NodeImpl@d2a03.878244666223111
+keeping edge:org.gephi.graph.impl.NodeImpl@d1fe<->org.gephi.graph.impl.NodeImpl@d2a03.8820661112533568
+keeping edge:org.gephi.graph.impl.NodeImpl@d25b<->org.gephi.graph.impl.NodeImpl@d2a03.8846350080408194
+keeping edge:org.gephi.graph.impl.NodeImpl@d1e5<->org.gephi.graph.impl.NodeImpl@d1e43.885401936068083
+keeping edge:org.gephi.graph.impl.NodeImpl@d223<->org.gephi.graph.impl.NodeImpl@d27c3.8856854075418097
+keeping edge:org.gephi.graph.impl.NodeImpl@d27a<->org.gephi.graph.impl.NodeImpl@d25a3.8955013133337837
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a4<->org.gephi.graph.impl.NodeImpl@d23d3.898472716933931
+keeping edge:org.gephi.graph.impl.NodeImpl@d21f<->org.gephi.graph.impl.NodeImpl@d25d3.899529020985746
+keeping edge:org.gephi.graph.impl.NodeImpl@d185<->org.gephi.graph.impl.NodeImpl@cedf3.9094178406494025
+keeping edge:org.gephi.graph.impl.NodeImpl@d29e<->org.gephi.graph.impl.NodeImpl@d25a3.915686407605063
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a4<->org.gephi.graph.impl.NodeImpl@d27e3.918280528779946
+keeping edge:org.gephi.graph.impl.NodeImpl@d189<->org.gephi.graph.impl.NodeImpl@d29c3.9235242414068843
+keeping edge:org.gephi.graph.impl.NodeImpl@d224<->org.gephi.graph.impl.NodeImpl@d27d3.9374530753419754
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a0<->org.gephi.graph.impl.NodeImpl@d27c3.940803861628198
+keeping edge:org.gephi.graph.impl.NodeImpl@d1a0<->org.gephi.graph.impl.NodeImpl@d1863.96226790348533
+keeping edge:org.gephi.graph.impl.NodeImpl@d182<->org.gephi.graph.impl.NodeImpl@d27d3.966479629055648
+keeping edge:org.gephi.graph.impl.NodeImpl@d183<->org.gephi.graph.impl.NodeImpl@d23d3.9750099935433747
+keeping edge:org.gephi.graph.impl.NodeImpl@d186<->org.gephi.graph.impl.NodeImpl@d25e3.983735925171693
+keeping edge:org.gephi.graph.impl.NodeImpl@d183<->org.gephi.graph.impl.NodeImpl@d27c3.993225405462069
+keeping edge:org.gephi.graph.impl.NodeImpl@d23d<->org.gephi.graph.impl.NodeImpl@d1843.9959146002029
+keeping edge:org.gephi.graph.impl.NodeImpl@d1e7<->org.gephi.graph.impl.NodeImpl@d27e3.9966131315492204
+keeping edge:org.gephi.graph.impl.NodeImpl@cedd<->org.gephi.graph.impl.NodeImpl@d1854.0
+3.878244666223111
+3.8846350080408194
+3.8820661112533568
+3.7501158058105877
+3.5729232584451385
+3.7141052549516584
+3.852611386999302
+3.8479675233563673
+3.8955013133337837
+3.8682049275303325
+3.915686407605063
+3.821072397937353
+3.8356240138486073
+2.903246901873123
+3.899529020985746
+3.696469618434828
+3.9235242414068843
+3.829716776932762
+3.7004846728893366
+3.7179551967585556
+3.8721569115917713
+3.966479629055648
+3.860180149465733
+3.9374530753419754
+3.918280528779946
+3.9966131315492204
+3.8721957806700664
+3.6183809937251916
+2.7859166314799433
+3.9094178406494025
+3.703670618635391
+3.5700269921771164
+3.704632160521735
+3.8507626175089054
+3.8596676558023297
+3.7300747117207464
+3.164484705867626
+3.983735925171693
+3.86449618030846
+3.8495904726574035
+3.7735159599147075
+3.3163848200189836
+3.628600899742892
+3.539507004296063
+3.993225405462069
+3.8856854075418097
+3.940803861628198
+3.855919250199922
+3.860766357787106
+2.9440995700648904
+3.73983997606803
+3.805144463279159
+3.6883946873714426
+3.8706622694414943
+3.4261438281726058
+3.7683788513310725
+3.61672301579234
+3.637439162874772
+3.8561970021012884
+2.5951776389985195
+3.0626771037336584
+3.354833752486205
+3.4747501666542515
+3.590387664818491
+3.7079769719702838
+3.4718191716119113
+4.0
+3.6611346758524745
+3.781505821353896
+3.6827051230329193
+3.7744176285577846
+3.5842759862359923
+3.836963546565889
+3.8349496645794634
+3.885401936068083
+3.96226790348533
+3.862368717624188
+3.9959146002029
+3.764064652835579
+3.8559328288146064
+3.8361865727344724
+3.8186981558435167
+0.7349634872368682
+3.484026069887278
+3.568413867985941
+3.5643196745619248
+3.6447526402664674
+3.9750099935433747
+3.898472716933931
+3.7829229591914264
+3.8298972635578217
+2.0886494893263214
+3.6528028264702472
+3.8257674312429737
+3.767309876402696
+3.682800142386584
+3.8349151092336857
+3.6867707961056446
+3.7064643973982383
+0.9325269308577057
+3.6440627126837195
+3.801127644396866
+finished coloring:0
+finished coloring:1
+finished coloring:2
+finished coloring:10
+finished coloring:3
+finished coloring:5
+finished coloring:3
+finished coloring:5
+finished coloring:6
+finished coloring:5
+finished coloring:3
+finished coloring:3
+finished coloring:3
+finished coloring:2
+finished coloring:19
+finished coloring:32
+finished coloring:27
+finished coloring:26
+finished coloring:27
+finished coloring:10
+finished coloring:10
+finished coloring:27
+finished coloring:10
+finished coloring:10
+finished coloring:27
+finished coloring:27
+finished coloring:13
+finished coloring:12
+finished coloring:12
+finished coloring:12
+finished coloring:12
+finished coloring:14
+finished coloring:17
+finished coloring:21
+finished coloring:37
+finished coloring:32
+finished coloring:34
+finished coloring:3
+finished coloring:4
+finished coloring:3
+finished coloring:5
+finished coloring:3
+finished coloring:5
+finished coloring:3
+finished coloring:5
+java.lang.NullPointerException
+finished coloring:6
+finished coloring:7
+finished coloring:10
+finished coloring:7
+finished coloring:10
+finished coloring:13
+finished coloring:10
+termsAssay: [reg001_Expression_Compensated_normalized_FCSsrc_low BG]
+termsControl: []
+Grouping worker started
+finished coloring:10
+Grouping worker ended
+termsAssay: [reg002_Expression_Compensated_normalized_FCSsrc_low BG]
+termsControl: []
+Grouping worker started
+finished coloring:10
+java.lang.NullPointerException
+Grouping worker ended
+termsAssay: [reg003_Expression_Compensated_normalized_FCSsrc_low BG]
+termsControl: []
+Grouping worker started
+finished coloring:10
+Grouping worker ended
+finished coloring:9
+finished coloring:10
+termsAssay: [reg004_Expression_Compensated_normalized_FCSsrc_low BG]
+termsControl: []
+Grouping worker started
+finished coloring:10
+Grouping worker ended
+finished coloring:5
+termsAssay: [reg005_Expression_Compensated_normalized_FCSsrc_low BG]
+termsControl: []
+Grouping worker started
+finished coloring:5
+Grouping worker ended
+termsAssay: [reg006_Expression_Compensated_normalized_FCSsrc_low BG]
+termsControl: []
+Grouping worker started
+finished coloring:5
+Grouping worker ended
+termsAssay: [reg001_Expression_Compensated_normalized_FCSsrc_low BG]
+termsControl: []
+Grouping worker started
+finished coloring:5
+Grouping worker ended
+termsAssay: [reg002_Expression_Compensated_normalized_FCSsrc_low BG]
+termsControl: []
+Grouping worker started
+finished coloring:5
+Grouping worker ended
+termsAssay: [reg003_Expression_Compensated_normalized_FCSsrc_low BG]
+termsControl: []
+Grouping worker started
+finished coloring:5
+java.lang.NullPointerException
+Grouping worker ended
+termsAssay: [reg004_Expression_Compensated_normalized_FCSsrc_low BG]
+termsControl: []
+Grouping worker started
+finished coloring:5
+java.lang.NullPointerException
+Grouping worker ended
