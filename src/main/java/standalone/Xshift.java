@@ -145,7 +145,7 @@ public class Xshift {
             System.exit(3);
         }
 
-        XShiftClustering clus = new XShiftClustering(new AngularDistance());
+        XShiftClustering clus = new XShiftClustering(new AngularDistance(), nd);
         clus.setSave(false);
 
         ClusterSet cs;
@@ -153,8 +153,8 @@ public class Xshift {
         try {
             if (K < 3) {
                 logger.print("dim" + nd.getNumDimensions());
-                int max = (int) Math.max((-12 * Math.pow(nd.getNumDimensions(), 2)) + 1050, 150);
-                int min = (int) Math.max(5.0, -0.38 * Math.pow(nd.getNumDimensions(), 1.5) + 11);
+                int max = (int) (2890 * Math.pow(nd.getNumDimensions(), -0.8));
+                int min = (int) (1942 * Math.pow(nd.getNumDimensions(), -1.61));
 
                 logger.print("Clustering from K=" + min + " to K=" + max + " with 30 steps ");
                 cs = clus.doAutomaticClustering(nd, max, min, 30);

@@ -77,7 +77,7 @@ public class AutomaticXshiftClustering implements Script {
                 x[i]=alx.get(i);
                 y[i]=aly.get(i);
             }
-            XShiftClustering xs = new XShiftClustering(new AngularDistance());
+            XShiftClustering xs = new XShiftClustering(new AngularDistance(),ds);
             Integer [] bestX = new Integer[]{ (int)Math.round(LinePlusExponent.findElbowPointLinePlusExp(y,x))};
             xs.setK(bestX);
             xs.setUseVMF(Boolean.FALSE);

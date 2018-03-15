@@ -214,7 +214,7 @@ public class GenerateSynthDatasetTrajectory {
             ConnectionManager.getStorageEngine().shutdown();
             System.exit(3);
             logger.setOutputMode(logger.OUTPUT_MODE_NONE);
-            XShiftClustering xsc = new XShiftClustering(new AngularDistance());
+            XShiftClustering xsc = new XShiftClustering(new AngularDistance(),ds);
 
             Integer[] Ka = new Integer[49];
             int n = 0;

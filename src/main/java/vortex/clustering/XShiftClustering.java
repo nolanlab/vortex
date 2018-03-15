@@ -20,6 +20,8 @@ import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 import javax.swing.JPanel;
+import javax.xml.crypto.Data;
+
 import vortex.mahalonobis.MahalonobisDistance;
 import clustering.Cluster;
 import clustering.ClusterMember;
@@ -51,7 +53,7 @@ public class XShiftClustering extends ClusteringAlgorithm {
     private DistanceMeasure dm;
     private Dataset currentDataset;
 
-    public XShiftClustering(DistanceMeasure dm) {
+    public XShiftClustering(DistanceMeasure dm, Dataset ds) {
         super(dm);
         this.dm = dm;
         logger.print("X-Shift init");
@@ -63,7 +65,7 @@ public class XShiftClustering extends ClusteringAlgorithm {
             angular = false;
             this.dm = dm;
         }
-        pan = new XshiftParamPanel(dm);
+        pan = new XshiftParamPanel(dm,ds);
     }
 
     private boolean save = true;

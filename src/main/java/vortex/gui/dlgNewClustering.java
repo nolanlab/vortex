@@ -508,7 +508,7 @@ public class dlgNewClustering extends GlassDialog {
     private void cmbDistanceMeasureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDistanceMeasureActionPerformed
         cmbAlgorithm.setModel(new DefaultComboBoxModel());
 
-        for (ClusteringAlgorithm cc : new ClusteringAlgorithm[]{new XShiftClustering(getDistanceMeasure()),
+        for (ClusteringAlgorithm cc : new ClusteringAlgorithm[]{new XShiftClustering(getDistanceMeasure(),ds[0]),
             new MeanShiftClusteringCore(getDistanceMeasure()),
             new HierarchicalClusteringCore(getDistanceMeasure()),
             new K_medoids(getDistanceMeasure()),

@@ -47,7 +47,7 @@ public class XShiftClustering_old extends ClusteringAlgorithm {
     private Boolean vMF = null;
     private final AtomicInteger intCount = new AtomicInteger(0);
 
-    public XShiftClustering_old(DistanceMeasure dm) {
+    public XShiftClustering_old(DistanceMeasure dm, Dataset ds) {
         super(dm);
         logger.print("X-Shift init");
         if (dm instanceof AngularDistance) {
@@ -58,7 +58,7 @@ public class XShiftClustering_old extends ClusteringAlgorithm {
             throw new IllegalArgumentException("X-shift works only with Angular or Euclidean distance");
         }
         logger.print("X-Shift init2");
-        pan = new XshiftParamPanel(dm);
+        pan = new XshiftParamPanel(dm,ds);
     }
 
     private boolean save = true;

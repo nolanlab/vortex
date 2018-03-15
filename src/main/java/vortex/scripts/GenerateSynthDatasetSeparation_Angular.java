@@ -142,7 +142,7 @@ public class GenerateSynthDatasetSeparation_Angular {
 
         try {
             ConnectionManager.getStorageEngine().saveDataset(ds, true);
-            XShiftClustering clus = new XShiftClustering(new EuclideanDistance());
+            XShiftClustering clus = new XShiftClustering(new EuclideanDistance(),ds);
             clus.setK(K);
             clus.doBatchClustering(ds, "NULL");
             ConnectionManager.getStorageEngine().shutdown();

@@ -607,10 +607,14 @@ public class DatasetBrowser extends javax.swing.JPanel implements DatasetDeletio
 
     private void pmiExportDSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pmiExportDSActionPerformed
         File f = IO.chooseFileWithDialog("Export Dataset", "Directory", new String[]{}, true);
+        if(!f.isDirectory()){
+            f = f.getParentFile();
+        }
         if (f != null) {
             try {
                 for (Dataset ds : getSelectedDatasets()) {
-                    File f2 = new File(f.getParent() + File.separator + ds.getName() + ".csv");
+
+                    File f2 = new File( f.getAbsolutePath()+ File.separator + ds.getName() + ".csv");
                     ds.writeToFile(f2, true, true);
                 }
             } catch (IOException e) {

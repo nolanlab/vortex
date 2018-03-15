@@ -67,10 +67,27 @@ public class ClusterBrowserPane extends javax.swing.JPanel implements ClusterSet
         return pmProfiles;
     }
 
+    Thread clt = null;
     public void setClusterPlot(ClusterSet c) {
+
+
+
         PanProfilePlot pp = new PanProfilePlot(c, false);
 
-        pp.addClusters(c.getClusters());
+        if(clt!=null){
+            clt.interrupt();
+        }
+
+        clt = new Thread(
+            new Runnable(){
+                @Override
+                public void run() {
+                    pp.addClusters(c.getClusters());
+                }
+            }
+            );
+        clt.start();
+
         int idx = -1;
         for (int i = 0; i < tabPane.getTabCount(); i++) {
             if (tabPane.getComponentAt(i) instanceof PanProfilePlot) {

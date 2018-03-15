@@ -68,6 +68,7 @@ public class GenerateSynthDatasetDim {
     }
 
     public GenerateSynthDatasetDim() {
+
     }
     private static int[] SIZES;
 
@@ -116,7 +117,7 @@ public class GenerateSynthDatasetDim {
             // ConnectionManager.getStorageEngine().shutdown();
             //System.exit(3);
             logger.setOutputMode(logger.OUTPUT_MODE_NONE);
-            XShiftClustering xsc = new XShiftClustering(new AngularDistance());
+            XShiftClustering xsc = new XShiftClustering(new AngularDistance(),ds);
 
             Integer[] Ka = new Integer[]{K};
             

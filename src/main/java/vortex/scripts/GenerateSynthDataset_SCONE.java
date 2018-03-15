@@ -6,36 +6,31 @@ package vortex.scripts;
 
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Random;
+import clustering.*;
 import umontreal.iro.lecuyer.probdist.StudentDist;
 import umontreal.iro.lecuyer.probdistmulti.MultiNormalDist;
 import umontreal.iro.lecuyer.randvar.NormalGen;
 import umontreal.iro.lecuyer.randvar.StudentGen;
-import umontreal.iro.lecuyer.randvarmulti.RandomMultivariateGen;
-import umontreal.iro.lecuyer.rng.MRG32k3a;
-import clustering.AngularDistance;
-import vortex.clustering.XShiftClustering;
-import clustering.Cluster;
-import clustering.ClusterMember;
-import clustering.ClusterSet;
-import clustering.Datapoint;
-import clustering.Dataset;
 import umontreal.iro.lecuyer.randvarmulti.MultinormalPCAGen;
+import umontreal.iro.lecuyer.randvarmulti.RandomMultivariateGen;
 import umontreal.iro.lecuyer.rng.MRG31k3p;
+import umontreal.iro.lecuyer.rng.MRG32k3a;
 import util.LinePlusExponent;
 import util.MatrixOp;
 import util.logger;
+import vortex.clustering.XShiftClustering;
 import vortex.util.Config;
 import vortex.util.ConnectionManager;
-import vortex.util.MultivariateStudentGen;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Random;
 
 /**
  *
  * @author Nikolay
  */
-public class GenerateSynthDataset {
+public class GenerateSynthDataset_SCONE {
 
     private static class MultinomialStudentGenerator extends RandomMultivariateGen {
 
@@ -73,7 +68,7 @@ public class GenerateSynthDataset {
 
     }
 
-    public GenerateSynthDataset() {
+    public GenerateSynthDataset_SCONE() {
     }
     private static int[] SIZES;
 
@@ -196,12 +191,16 @@ public class GenerateSynthDataset {
                 paramNames[i] = "param " + i;
             }
 
-            Dataset ds = new Dataset("Synth_Norm+Student_10comp_50dim_carryover=0.9_2", dp.toArray(new Datapoint[dp.size()]), paramNames, new String[]{"Density", "ComponentID"});
+            Dataset ds = new Dataset("Synth_Norm+Student_10comp_50dim_carryover=0.9_SCONE", dp.toArray(new Datapoint[dp.size()]), paramNames, new String[]{"Density", "ComponentID"});
+
+
 
             ConnectionManager.setDatabaseHost(Config.getDefaultDatabaseHost());//new ConnectionManager.get(DatabaseHost.HOST_HSQLDB, "D:\\hsqldb\\greg", "local file", "sa", ""));
             ConnectionManager.getStorageEngine().saveDataset(ds, true);
             ConnectionManager.getStorageEngine().shutdown();
             System.exit(3);
+
+            /*
             logger.setOutputMode(logger.OUTPUT_MODE_NONE);
             XShiftClustering xsc = new XShiftClustering(new AngularDistance());
 
@@ -238,7 +237,9 @@ public class GenerateSynthDataset {
             logger.print("Optimal K =" + elboX);
             z++;
             //logger.print(sumSizes+"\t"+(Calendar.getInstance().getTimeInMillis()-millis));
+            */
         }
+
         //
     }
 

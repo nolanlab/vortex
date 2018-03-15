@@ -10,6 +10,7 @@
  */
 package vortex.clustering;
 
+import clustering.Dataset;
 import clustering.DistanceMeasure;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -30,9 +31,13 @@ public class KNNParamPanel extends javax.swing.JPanel {
     /**
      * Creates new form KMeansParamPanel
      */
-    public KNNParamPanel(DistanceMeasure dm) {
+    public KNNParamPanel(DistanceMeasure dm, Dataset nd) {
         initComponents();
         this.dm = dm;
+        int max = (int) Math.max((-12 * Math.pow(nd.getNumDimensions(), 2)) + 1050, 150);
+        int min = (int) Math.max(5.0, -0.38 * Math.pow(nd.getNumDimensions(), 1.5) + 11);
+        spinFKFrom.setModel(new SpinnerNumberModel(max, 1, 1000, 1));
+        spinFKTo.setModel(new SpinnerNumberModel(min, 1, 1000, 1));
         spinMergeThs.setModel(new SpinnerNumberModel(0.90, dm.getSimilarityBounds()[0], dm.getSimilarityBounds()[1], 0.01));
     }
 

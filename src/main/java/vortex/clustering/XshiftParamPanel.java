@@ -35,10 +35,18 @@ public class XshiftParamPanel extends javax.swing.JPanel {
     /**
      * Creates new form KMeansParamPanel
      */
-    public XshiftParamPanel(DistanceMeasure dm) {
-         logger.print("X-Shift Param Panel init");
+    public XshiftParamPanel(DistanceMeasure dm, Dataset nd) {
+         logger.print("X-Shift Param Panel init_here");
         initComponents();
         this.dm = dm;
+
+
+
+        int max = (int) (2890 * Math.pow(nd.getNumDimensions(), -0.8));
+        int min = (int) (1942 * Math.pow(nd.getNumDimensions(), -1.61));
+        spinFKFrom.setModel(new SpinnerNumberModel(max, 1, 1000, 1));
+        spinFKTo.setModel(new SpinnerNumberModel(min, 1, 1000, 1));
+
         if (!(dm instanceof AngularDistance)) {
             cmbKernel.setModel(new DefaultComboBoxModel(new String[]{"N nearest neighbors"}));
         }
@@ -110,7 +118,7 @@ public class XshiftParamPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(300, 90));
         setLayout(new java.awt.GridBagLayout());
 
-        spinFKFrom.setModel(new javax.swing.SpinnerNumberModel(150, null, null, 1));
+        //spinFKFrom.setModel(new javax.swing.SpinnerNumberModel(150, null, null, 1));
         spinFKFrom.setMaximumSize(new java.awt.Dimension(60, 25));
         spinFKFrom.setMinimumSize(new java.awt.Dimension(60, 25));
         spinFKFrom.setPreferredSize(new java.awt.Dimension(60, 25));
@@ -126,7 +134,7 @@ public class XshiftParamPanel extends javax.swing.JPanel {
         gridBagConstraints.gridy = 2;
         add(spinFKFrom, gridBagConstraints);
 
-        spinFKTo.setModel(new javax.swing.SpinnerNumberModel(5, null, null, 1));
+        //spinFKTo.setModel(new javax.swing.SpinnerNumberModel(5, null, null, 1));
         spinFKTo.setMaximumSize(new java.awt.Dimension(60, 25));
         spinFKTo.setMinimumSize(new java.awt.Dimension(60, 25));
         spinFKTo.setPreferredSize(new java.awt.Dimension(60, 25));

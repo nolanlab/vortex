@@ -132,6 +132,7 @@ public class PanProfilePlot extends javax.swing.JPanel implements PropertyChange
 
     public void addClusters(Cluster[] cl) {
         for (Cluster c : cl) {
+            System.out.println("Adding cluster: " + c.toString());
             //c.addPropertyChangeListener(this);
             if (c == null) {
                 return;
