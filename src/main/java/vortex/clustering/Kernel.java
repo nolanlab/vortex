@@ -4,11 +4,11 @@
  */
 package vortex.clustering;
 
-import clustering.DistanceMeasure;
+import sandbox.clustering.DistanceMeasure;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 
 /**
  *

@@ -22,13 +22,13 @@ import samusik.glasscmp.GlassFrame;
 import samusik.glasscmp.GlassListSelector;
 import samusik.objecttable.ObjectTableModel;
 import samusik.objecttable.TableTransferHandler;
-import clustering.Cluster;
-import clustering.ClusterMember;
-import annotations.EnrichmentInfo;
-import clustering.Dataset;
-import clustering.Score;
-import annotations.Annotation;
-import annotations.Enrichment;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterMember;
+import sandbox.annotations.EnrichmentInfo;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.Score;
+import sandbox.annotations.Annotation;
+import sandbox.annotations.Enrichment;
 import util.logger;
 
 /**

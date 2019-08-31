@@ -67,7 +67,7 @@ public class panSelectDatabaseHost2 extends javax.swing.JPanel {
 
         setLayout(new java.awt.GridBagLayout());
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, "Select database server connection:");
+        jLabel1.setText("Select database server connection:"); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -75,7 +75,7 @@ public class panSelectDatabaseHost2 extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(84, 327, 0, 0);
         add(jLabel1, gridBagConstraints);
-
+        
         cmbConnection.setMaximumSize(new java.awt.Dimension(32767, 28));
         cmbConnection.setMinimumSize(new java.awt.Dimension(62, 28));
         cmbConnection.setPreferredSize(new java.awt.Dimension(62, 28));
@@ -115,7 +115,6 @@ public class panSelectDatabaseHost2 extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 18, 0, 0);
         add(cmdDelete1, gridBagConstraints);
 
-        org.openide.awt.Mnemonics.setLocalizedText(cmdBrowseFile, "Browse");
         cmdBrowseFile.setToolTipText("New dataset");
         cmdBrowseFile.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         cmdBrowseFile.setIconTextGap(0);
@@ -147,7 +146,7 @@ public class panSelectDatabaseHost2 extends javax.swing.JPanel {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         add(txtHSQLDB_FilePath, gridBagConstraints);
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel7, "Path to the local directory where the database is (will be) stored:");
+        jLabel7.setText("Path to the local directory where the database is (will be) stored:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
@@ -167,7 +166,7 @@ public class panSelectDatabaseHost2 extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 85, 0);
         add(txtInstanceName, gridBagConstraints);
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel9, "Database name (cannot be empty)");
+        jLabel9.setText("Database name (cannot be empty)");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;

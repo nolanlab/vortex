@@ -5,9 +5,8 @@
 package vortex.tasks;
 
 import cern.colt.Arrays;
-import executionslave.ReusableObject;
-import clustering.Datapoint;
-import clustering.Dataset;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
 import vortex.clustering.Kernel;
 import util.MatrixOp;
 import util.logger;
@@ -16,7 +15,7 @@ import util.logger;
  *
  * @author Nikolay
  */
-public class MeanShiftTask implements executionslave.ReusingTask<double[]> {
+public class MeanShiftTask {
 
     public static final long serialVersionUID = 205L;
     double[] center, initCenter;
@@ -38,7 +37,6 @@ public class MeanShiftTask implements executionslave.ReusingTask<double[]> {
         return initCenter;
     }
 
-    @Override
     public void cancel() {
         Thread.currentThread().interrupt();
     }
@@ -51,12 +49,10 @@ public class MeanShiftTask implements executionslave.ReusingTask<double[]> {
         this.kernel = kernel.clone();
     }
 
-    @Override
-    public void injectReusableObject(ReusableObject localObject) {
+    public void injectReusableObject(Object localObject) {
         nd = ((Dataset) localObject);
     }
 
-    @Override
     public double[] execute() {
         //NDatapoint[] dp = nd.getDatapoints();
         double shiftRatio;

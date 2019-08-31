@@ -36,13 +36,13 @@ import javax.swing.table.TableRowSorter;
 import samusik.glasscmp.GlassTableHeader;
 import samusik.objecttable.ObjectTableModel;
 import samusik.objecttable.TableTransferHandler;
-import clustering.ClusterSet;
-import clustering.Dataset;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Dataset;
 import vortex.main.TableCellEditorEx;
-import annotations.Annotation;
+import sandbox.annotations.Annotation;
 import vortex.gui.clusterdendrogram.frmHierarchyPlot;
-import clustering.ClusterMember;
-import dataIO.ClusterSetToFCSExporter;
+import sandbox.clustering.ClusterMember;
+import sandbox.dataIO.ClusterSetToFCSExporter;
 import java.awt.Color;
 import java.io.IOException;
 import util.IO;
@@ -349,8 +349,6 @@ public class ClusteringResultList extends javax.swing.JPanel implements DatasetB
         pmiCreateHierarchyPlot = new javax.swing.JMenuItem();
         pmiPCAPlot = new javax.swing.JMenuItem();
         pmiValidation = new javax.swing.JMenu();
-        pmiSilhouetteIndex = new javax.swing.JMenuItem();
-        pmiStability = new javax.swing.JMenuItem();
         pmiElbow = new javax.swing.JMenuItem();
         jScrollPane1 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
@@ -428,22 +426,6 @@ public class ClusteringResultList extends javax.swing.JPanel implements DatasetB
         popup.add(pmiPCAPlot);
 
         pmiValidation.setText("Validation");
-
-        pmiSilhouetteIndex.setText("Cluster Silhouette Index");
-        pmiSilhouetteIndex.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pmiSilhouetteIndexActionPerformed(evt);
-            }
-        });
-        pmiValidation.add(pmiSilhouetteIndex);
-
-        pmiStability.setText("Clustering Stability");
-        pmiStability.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pmiStabilityActionPerformed(evt);
-            }
-        });
-        pmiValidation.add(pmiStability);
 
         pmiElbow.setText("find Elbow Point for Cluster Number");
         pmiElbow.addActionListener(new java.awt.event.ActionListener() {
@@ -681,15 +663,6 @@ public class ClusteringResultList extends javax.swing.JPanel implements DatasetB
         }
     }//GEN-LAST:event_pmiExportActionPerformed
 
-    private void pmiSilhouetteIndexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pmiSilhouetteIndexActionPerformed
-        frmClusterSilhouetteIndex frm = new frmClusterSilhouetteIndex(getSelectedClusterSets());
-        frm.setVisible(true);
-    }//GEN-LAST:event_pmiSilhouetteIndexActionPerformed
-
-    private void pmiStabilityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pmiStabilityActionPerformed
-        new frmClusterMutualInformation(getSelectedClusterSets()).setVisible(true);
-    }//GEN-LAST:event_pmiStabilityActionPerformed
-
     private void pmiStatsPerGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pmiStatsPerGroupActionPerformed
         /*JOptionPane.showMessageDialog(this, "This procedure will compute the statistics about the distribution \nof user-defined measurement groups to individual clusters \nand the average values of side-variables for each group in every cluster.\n"
          + "Next, you will be asked to provide a grouping file in tab-delimited format.\n Example:\n"
@@ -816,8 +789,6 @@ public class ClusteringResultList extends javax.swing.JPanel implements DatasetB
     private javax.swing.JMenuItem pmiExportFCS;
     private javax.swing.JMenuItem pmiExportIndexString;
     private javax.swing.JMenuItem pmiPCAPlot;
-    private javax.swing.JMenuItem pmiSilhouetteIndex;
-    private javax.swing.JMenuItem pmiStability;
     private javax.swing.JMenuItem pmiStatsPerGroup;
     private javax.swing.JMenu pmiValidation;
     private javax.swing.JPopupMenu popup;

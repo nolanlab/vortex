@@ -10,8 +10,8 @@
  */
 package vortex.clustering;
 
-import clustering.Dataset;
-import clustering.DistanceMeasure;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.DistanceMeasure;
 import java.util.Arrays;
 import java.util.Comparator;
 import javax.swing.SpinnerNumberModel;

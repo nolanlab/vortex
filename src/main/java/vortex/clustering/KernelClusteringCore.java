@@ -4,12 +4,12 @@
  */
 package vortex.clustering;
 
-import clustering.ClusteringAlgorithm;
-import clustering.DistanceMeasure;
-import clustering.ClusterSet;
-import clustering.Cluster;
+import sandbox.clustering.ClusteringAlgorithm;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Cluster;
 import java.sql.SQLException;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 import javax.swing.JPanel;
 import util.logger;
 import vortex.util.ConnectionManager;

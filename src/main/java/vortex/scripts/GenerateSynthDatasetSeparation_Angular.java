@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 Nikolay
+ * Copyright (C) 2019 Nikolay Samusik and Stanford University
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -26,10 +26,10 @@ import umontreal.iro.lecuyer.randvar.NormalGen;
 import umontreal.iro.lecuyer.randvarmulti.MultinormalCholeskyGen;
 import umontreal.iro.lecuyer.randvarmulti.RandomMultivariateGen;
 import umontreal.iro.lecuyer.rng.LFSR113;
-import clustering.EuclideanDistance;
+import sandbox.clustering.EuclideanDistance;
 import vortex.clustering.XShiftClustering;
-import clustering.Datapoint;
-import clustering.Dataset;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
 import util.Shuffle;
 import vortex.util.Config;
 import vortex.util.ConnectionManager;

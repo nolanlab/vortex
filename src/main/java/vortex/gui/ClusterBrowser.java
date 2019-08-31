@@ -10,7 +10,7 @@
  */
 package vortex.gui;
 
-import clustering.BarCode;
+import sandbox.clustering.BarCode;
 import java.awt.Color;
 import java.awt.Rectangle;
 import java.awt.event.MouseAdapter;
@@ -25,8 +25,8 @@ import javax.swing.table.TableRowSorter;
 import samusik.glasscmp.GlassTableHeader;
 import samusik.objecttable.ObjectTableModel;
 import samusik.objecttable.TableTransferHandler;
-import clustering.Cluster;
-import clustering.ClusterMember;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterMember;
 import vortex.main.TableCellEditorEx;
 
 /**

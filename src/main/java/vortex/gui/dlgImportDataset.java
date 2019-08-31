@@ -4,9 +4,9 @@
  */
 package vortex.gui;
 
-import dataIO.DatasetImporter;
-import dataIO.DatasetStub;
-import dataIO.ImportConfigObject;
+import sandbox.dataIO.DatasetImporter;
+import sandbox.dataIO.DatasetStub;
+import sandbox.dataIO.ImportConfigObject;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
@@ -32,7 +32,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import samusik.glasscmp.GlassDialog;
 import samusik.objecttable.TableModelReorderHandler;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 import vortex.util.Config;
 import vortex.util.ConnectionManager;
 import util.DefaultEntry;

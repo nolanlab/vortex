@@ -10,8 +10,8 @@
  */
 package vortex.clustering;
 
-import clustering.BarCode;
-import clustering.DistanceMeasure;
+import sandbox.clustering.BarCode;
+import sandbox.clustering.DistanceMeasure;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -29,11 +29,11 @@ import javax.imageio.ImageIO;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import clustering.Cluster;
-import clustering.ClusterSet;
-import clustering.Datapoint;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Datapoint;
 import java.sql.SQLException;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 import util.IO;
 import util.MatrixOp;
 import vortex.gui.BarCodeTableCellRenderer;

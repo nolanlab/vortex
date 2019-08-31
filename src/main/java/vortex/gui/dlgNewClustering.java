@@ -27,23 +27,20 @@ import javax.swing.SwingWorker;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
 import samusik.glasscmp.GlassDialog;
 import samusik.glasscmp.GlassPanel;
-import clustering.AngularDistance;
-import clustering.ClusterSet;
-import clustering.Dataset;
-import clustering.ClusteringAlgorithm;
-import clustering.DistanceMeasure;
-import clustering.EuclideanDistance;
+import sandbox.clustering.AngularDistance;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.ClusteringAlgorithm;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.EuclideanDistance;
 import util.logger;
 import vortex.clustering.HierarchicalClusteringCore;
-import vortex.clustering.ImportClustering;
-import clustering.K_medoids;
-import clustering.NoiseSuppressingAngularDistance;
-import clustering.NoiseSuppressingEuclideanDistance;
+import sandbox.clustering.K_medoids;
+import sandbox.clustering.NoiseSuppressingAngularDistance;
+import sandbox.clustering.NoiseSuppressingEuclideanDistance;
 import java.lang.reflect.InvocationTargetException;
-import vortex.clustering.MeanShiftClusteringCore;
-import vortex.clustering.RankBySimilarityClusteringCore;
+
 import vortex.clustering.XShiftClustering;
-import vortex.gridengine.GridEngine;
 import vortex.util.ClassWrapper;
 import vortex.util.ConnectionManager;
 
@@ -85,7 +82,7 @@ public class dlgNewClustering extends GlassDialog {
         jProgressBar1.setVisible(false);
         //scp1.setVisible(false);
         this.setTitle("New clustering: " + ds[0].getName());
-        jTextArea1.append("Available CPUs: " + GridEngine.getInstance().getMaxNumThreads() + "\n");
+        jTextArea1.append("Available CPUs: " + Runtime.getRuntime().availableProcessors()+ "\n");
         jTextArea1.append("Total Memory: " + Runtime.getRuntime().totalMemory() + "\n");
         jTextArea1.append("Free Memory: " + Runtime.getRuntime().freeMemory() + "\n");
         jTextArea1.append("Ready for clustering\n\n");
@@ -438,7 +435,6 @@ public class dlgNewClustering extends GlassDialog {
     private boolean tryInterruptClustering() {
         if (worker != null) {
             if (JOptionPane.showConfirmDialog(this, "Are you sure you want to interrupt the current clustering run?") == JOptionPane.OK_OPTION) {
-                GridEngine.getInstance().cancelExecution();
                 worker.cancel(true);
                 worker = null;
                 return true;
@@ -509,11 +505,8 @@ public class dlgNewClustering extends GlassDialog {
         cmbAlgorithm.setModel(new DefaultComboBoxModel());
 
         for (ClusteringAlgorithm cc : new ClusteringAlgorithm[]{new XShiftClustering(getDistanceMeasure(),ds[0]),
-            new MeanShiftClusteringCore(getDistanceMeasure()),
             new HierarchicalClusteringCore(getDistanceMeasure()),
             new K_medoids(getDistanceMeasure()),
-            new RankBySimilarityClusteringCore(getDistanceMeasure()),
-            new ImportClustering(getDistanceMeasure())
         }) {
             ((DefaultComboBoxModel) cmbAlgorithm.getModel()).addElement(cc);
         }

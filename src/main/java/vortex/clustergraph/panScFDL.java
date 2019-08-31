@@ -5,15 +5,16 @@
  */
 package vortex.clustergraph;
 
-import annotations.Annotation;
+import org.hsqldb.util.CSVWriter;
+import sandbox.annotations.Annotation;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
 import cern.colt.matrix.linalg.Algebra;
-import clustering.Cluster;
-import clustering.ClusterMember;
-import clustering.Datapoint;
-import clustering.Dataset;
-import clustering.DistanceMeasure;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterMember;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.DistanceMeasure;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Component;
@@ -72,7 +73,6 @@ import org.gephi.layout.plugin.forceAtlas2.ForceAtlas2Builder;
 import org.gephi.project.api.Project;
 import org.gephi.project.api.ProjectController;
 import org.gephi.project.api.Workspace;
-import org.hsqldb.util.CSVWriter;
 import org.openide.util.Lookup;
 import util.DefaultEntry;
 import util.IO;

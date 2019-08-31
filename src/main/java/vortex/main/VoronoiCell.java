@@ -4,7 +4,7 @@
  */
 package vortex.main;
 
-import clustering.Datapoint;
+import sandbox.clustering.Datapoint;
 import java.io.Serializable;
 import java.util.ArrayList;
 

@@ -11,15 +11,15 @@ import java.sql.SQLException;
 import java.util.Arrays;
 
 import java.util.LinkedList;
-import annotations.Annotation;
-import clustering.AngularDistance;
+import sandbox.annotations.Annotation;
+import sandbox.clustering.AngularDistance;
 
-import dataIO.DatasetStub;
+import sandbox.dataIO.DatasetStub;
 import vortex.mahalonobis.MahalonobisDistance;
-import clustering.Cluster;
-import clustering.ClusterSet;
-import clustering.Datapoint;
-import clustering.Dataset;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
 import vortex.util.Config;
 import vortex.util.ConnectionManager;
 import util.MatrixOp;

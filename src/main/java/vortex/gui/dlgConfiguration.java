@@ -10,7 +10,7 @@
  */
 package vortex.gui;
 
-import clustering.Mode;
+import sandbox.clustering.Mode;
 import java.awt.Color;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;

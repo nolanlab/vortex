@@ -4,7 +4,6 @@
  */
 package vortex.tasks;
 
-import executionslave.ReusableObject;
 import java.io.Serializable;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
@@ -13,9 +12,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Map.Entry;
-import clustering.Datapoint;
-import clustering.Dataset;
-import clustering.DistanceMeasure;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.DistanceMeasure;
 import util.logger;
 
 /**
@@ -56,8 +55,7 @@ public class GabrielNeighborTaskGeneric extends GabrielNeighborTaskAngular {
         this.dm = dm.clone();
     }
 
-    @Override
-    public void injectReusableObject(ReusableObject localObjects) {
+    public void injectReusableObject(Object localObjects) {
         ds = (Dataset) localObjects;
     }
 

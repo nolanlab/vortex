@@ -10,13 +10,13 @@
  */
 package vortex.clustering;
 
-import clustering.DistanceMeasure;
-import clustering.AngularDistance;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.AngularDistance;
 import java.util.Arrays;
 import java.util.Comparator;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.SpinnerNumberModel;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 import util.logger;
 
 /**
@@ -40,12 +40,12 @@ public class XshiftParamPanel extends javax.swing.JPanel {
         initComponents();
         this.dm = dm;
 
-
-
         int max = (int) (2890 * Math.pow(nd.getNumDimensions(), -0.8));
         int min = (int) (1942 * Math.pow(nd.getNumDimensions(), -1.61));
-        spinFKFrom.setModel(new SpinnerNumberModel(max, 1, 1000, 1));
-        spinFKTo.setModel(new SpinnerNumberModel(min, 1, 1000, 1));
+        min = Math.max(3,Math.min (min,1000));
+        max = Math.max(3,Math.min (max,1000));
+        spinFKFrom.setModel(new SpinnerNumberModel(max, 3, 1000, 1));
+        spinFKTo.setModel(new SpinnerNumberModel(min, 3, 1000, 1));
 
         if (!(dm instanceof AngularDistance)) {
             cmbKernel.setModel(new DefaultComboBoxModel(new String[]{"N nearest neighbors"}));

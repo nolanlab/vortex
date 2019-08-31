@@ -4,19 +4,18 @@
  */
 package vortex.tasks;
 
-import clustering.Dataset;
-import clustering.Datapoint;
-import executionslave.ReusableObject;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.Datapoint;
 import java.util.Arrays;
 import java.util.Comparator;
-import clustering.DistanceMeasure;
+import sandbox.clustering.DistanceMeasure;
 import util.MatrixOp;
 
 /**
  *
  * @author Nikolay
  */
-public class SortingTask implements executionslave.ReusingTask<int[]> {
+public class SortingTask {
 
     private Datapoint[] d;
     private double[] centerD;
@@ -32,7 +31,6 @@ public class SortingTask implements executionslave.ReusingTask<int[]> {
 
     }
 
-    @Override
     public void cancel() {
         Thread.currentThread().interrupt();
     }
@@ -40,8 +38,7 @@ public class SortingTask implements executionslave.ReusingTask<int[]> {
     int x;
     int dim;
 
-    @Override
-    public void injectReusableObject(ReusableObject localObjects) {
+    public void injectReusableObject(Object localObjects) {
         d = ((Dataset) localObjects).getDatapoints();
     }
 
@@ -53,7 +50,6 @@ public class SortingTask implements executionslave.ReusingTask<int[]> {
      * @param i
      * @return
      */
-    @Override
     public int[] execute() {
 
         arr = new double[d.length];

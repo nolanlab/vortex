@@ -5,13 +5,13 @@
  */
 package vortex.clustergraph;
 
-import annotations.Annotation;
-import clustering.AngularDistance;
-import clustering.Dataset;
-import clustering.DistanceMeasure;
-import clustering.EuclideanDistance;
-import clustering.NoiseSuppressingAngularDistance;
-import clustering.NoiseSuppressingEuclideanDistance;
+import sandbox.annotations.Annotation;
+import sandbox.clustering.AngularDistance;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.EuclideanDistance;
+import sandbox.clustering.NoiseSuppressingAngularDistance;
+import sandbox.clustering.NoiseSuppressingEuclideanDistance;
 import java.awt.Component;
 import java.util.stream.Stream;
 import javax.swing.DefaultComboBoxModel;

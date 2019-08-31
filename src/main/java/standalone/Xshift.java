@@ -1,17 +1,17 @@
 package standalone;
 
 import vortex.clustergraph.MSTBuilder;
-import clustering.AngularDistance;
-import clustering.ClusterSet;
-import clustering.Dataset;
-import dataIO.DatasetStub;
-import dataIO.ImportConfigObject;
+import sandbox.clustering.AngularDistance;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Dataset;
+import sandbox.dataIO.DatasetStub;
+import sandbox.dataIO.ImportConfigObject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import dataIO.GMLWriter;
+import vortex.dataIO.GMLWriter;
 
 import org.gephi.graph.api.UndirectedGraph;
 import util.IO;
@@ -32,8 +32,9 @@ public class Xshift {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-
+        
         int K = 20;
+        
         try {
             if (args.length > 0) {
                 if (args[0].trim().equals("auto")) {
@@ -135,7 +136,7 @@ public class Xshift {
 
         Dataset nd = null;
         try {
-            nd = dataIO.DatasetImporter.importDataset(stubs, config);
+            nd = sandbox.dataIO.DatasetImporter.importDataset(stubs, config);
         } catch (Exception e) {
             logger.print("Error importing the dataset. Exiting");
             logger.print("Reason: " + e.toString() + ", " + e.getMessage());
@@ -166,7 +167,7 @@ public class Xshift {
 
             try {
                 logger.print("Exporting FCS files");
-                dataIO.ClusterSetToFCSExporterWithNNReassignment.exportClusterSet(cs, fcsFilePaths.toArray(new String[fcsFilePaths.size()]), new File(OUTPUT_PATH), stubs, config);
+                sandbox.dataIO.ClusterSetToFCSExporterWithNNReassignment.exportClusterSet(cs, fcsFilePaths.toArray(new String[fcsFilePaths.size()]), new File(OUTPUT_PATH), config);
             } catch (Exception e) {
                 logger.print("Error exporting the data. Exiting");
                 logger.print("Reason: " + e.toString() + ", " + e.getMessage());

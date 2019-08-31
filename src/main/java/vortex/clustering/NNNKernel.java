@@ -4,13 +4,13 @@
  */
 package vortex.clustering;
 
-import clustering.DistanceMeasure;
+import sandbox.clustering.DistanceMeasure;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 import util.logger;
 
 /**

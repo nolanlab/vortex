@@ -4,22 +4,20 @@
  */
 package vortex.tasks;
 
-import executionslave.ReusableObject;
-import executionslave.ReusingTask;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
-import clustering.Datapoint;
-import clustering.Dataset;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
 import util.SparseDoubleMatrix;
 
 /**
  *
  * @author Nikolay
  */
-public class FindShotestPathToRootTask implements ReusingTask<double[]> {
+public class FindShotestPathToRootTask  {
 
     private static final long serialVersionUID = 1L;
     SparseDoubleMatrix dwg;
@@ -30,15 +28,13 @@ public class FindShotestPathToRootTask implements ReusingTask<double[]> {
         this.root = root;
     }
 
-    @Override
     public void cancel() {
         Thread.currentThread().interrupt();
     }
 
-    @Override
-    public void injectReusableObject(ReusableObject localObjects) {
-        dwg = ((ClusteringGraphReusableObject) localObjects).getGraph();
-        ds = ((ClusteringGraphReusableObject) localObjects).getDataset();
+    public void injectReusableObject(Object localObjects) {
+        dwg = null;//((ClusteringGraphReusableObject) localObjects).getGraph();
+        ds = null;//((ClusteringGraphReusableObject) localObjects).getDataset();
     }
 
     private Queue<Integer> incomingEdgesOf(SparseDoubleMatrix mtx, int i) {
@@ -46,7 +42,6 @@ public class FindShotestPathToRootTask implements ReusingTask<double[]> {
         return mtx.getNonemptyRowsForColumn(i);
     }
 
-    @Override
     public double[] execute() {
 
         HashMap<Datapoint, Double> hmShortestPathWeights = new HashMap<>();

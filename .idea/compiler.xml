@@ -6,13 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="maven-archiver" />
-        <module name="VorteX_m" />
+        <module name="VorteX" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="maven-archiver" target="1.5" />
-      <module name="VorteX_m" target="1.8" />
+      <module name="VorteX" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

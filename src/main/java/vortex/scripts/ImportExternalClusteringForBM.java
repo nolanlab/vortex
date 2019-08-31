@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Nikolay
+ * Copyright (C) 2019 Nikolay Samusik and Stanford University
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,7 +17,7 @@
  */
 package vortex.scripts;
 
-import dataIO.DatasetStub;
+import sandbox.dataIO.DatasetStub;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -25,12 +25,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import clustering.DistanceMeasure;
-import clustering.EuclideanDistance;
-import clustering.Cluster;
-import clustering.ClusterSet;
-import clustering.Datapoint;
-import clustering.Dataset;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.EuclideanDistance;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
 import util.IO;
 import vortex.util.Config;
 import vortex.util.ConnectionManager;

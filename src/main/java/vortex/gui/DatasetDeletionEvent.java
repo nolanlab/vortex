@@ -5,7 +5,7 @@
 package vortex.gui;
 
 import java.util.EventObject;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 
 
 /**

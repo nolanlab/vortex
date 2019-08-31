@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.MutableTreeNode;
-import clustering.Datapoint;
+import sandbox.clustering.Datapoint;
 
 /**
  *

@@ -22,7 +22,7 @@ import samusik.glasscmp.GlassFrame;
 import samusik.glasscmp.GlassTableHeader;
 import samusik.objecttable.ObjectTableModel;
 import samusik.objecttable.TableModelReorderHandler;
-import clustering.ClusterSet;
+import sandbox.clustering.ClusterSet;
 import java.awt.Toolkit;
 
 /**

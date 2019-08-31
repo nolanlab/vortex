@@ -5,10 +5,10 @@
  */
 package vortex.clustergraph;
 
-import clustering.Cluster;
-import clustering.ClusterMember;
-import clustering.Datapoint;
-import clustering.DistanceMeasure;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterMember;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.DistanceMeasure;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;

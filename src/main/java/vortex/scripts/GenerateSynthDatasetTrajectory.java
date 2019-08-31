@@ -4,9 +4,14 @@
  */
 package vortex.scripts;
 
+import sandbox.clustering.AngularDistance;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.ClusterMember;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
-import clustering.*;
 import umontreal.iro.lecuyer.probdist.StudentDist;
 import umontreal.iro.lecuyer.probdistmulti.MultiNormalDist;
 import umontreal.iro.lecuyer.randvar.NormalGen;

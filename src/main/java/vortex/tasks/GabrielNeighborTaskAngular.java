@@ -4,8 +4,6 @@
  */
 package vortex.tasks;
 
-import executionslave.ReusableObject;
-import executionslave.ReusingTask;
 import java.io.Serializable;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.ArrayList;
@@ -14,8 +12,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Map.Entry;
-import clustering.Datapoint;
-import clustering.Dataset;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
 import util.MatrixOp;
 import util.logger;
 
@@ -23,7 +21,7 @@ import util.logger;
  *
  * @author Nikolay
  */
-public class GabrielNeighborTaskAngular implements ReusingTask<int[]> {
+public class GabrielNeighborTaskAngular {
 
     private static final long serialVersionUID = 1L;
     private int centerID;
@@ -43,7 +41,6 @@ public class GabrielNeighborTaskAngular implements ReusingTask<int[]> {
         public int[] sortedDatapointIDs;
     }
 
-    @Override
     public void cancel() {
         Thread.currentThread().interrupt();
     }
@@ -59,12 +56,10 @@ public class GabrielNeighborTaskAngular implements ReusingTask<int[]> {
 
     }
 
-    @Override
-    public void injectReusableObject(ReusableObject localObjects) {
+    public void injectReusableObject(Object localObjects) {
         ds = (Dataset) localObjects;
     }
 
-    @Override
     public int[] execute() {
         double[] mid;
         double[] center = null;

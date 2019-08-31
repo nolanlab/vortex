@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/VorteX_m.iml" filepath="$PROJECT_DIR$/VorteX_m.iml" />
-      <module fileurl="file://$PROJECT_DIR$/target/maven-archiver/maven-archiver.iml" filepath="$PROJECT_DIR$/target/maven-archiver/maven-archiver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/VorteX.iml" filepath="$PROJECT_DIR$/VorteX.iml" />
     </modules>
   </component>
 </project>

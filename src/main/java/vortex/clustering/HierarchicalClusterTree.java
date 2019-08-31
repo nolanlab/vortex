@@ -4,8 +4,8 @@
  */
 package vortex.clustering;
 
-import clustering.DistanceMeasure;
-import clustering.Dataset;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.Dataset;
 import vortex.clustering.HierarchicalParamPanel.LinkageType;
 
 /**

@@ -18,9 +18,9 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import javax.swing.JOptionPane;
 import samusik.glasscmp.GlassDialog;
-import clustering.Cluster;
-import clustering.ClusterMember;
-import clustering.ClusterSet;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterMember;
+import sandbox.clustering.ClusterSet;
 import util.IO;
 
 import util.logger;

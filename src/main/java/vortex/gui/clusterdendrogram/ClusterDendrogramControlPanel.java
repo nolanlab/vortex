@@ -13,8 +13,8 @@ package vortex.gui.clusterdendrogram;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import annotations.Annotation;
-import clustering.ClusterSet;
+import sandbox.annotations.Annotation;
+import sandbox.clustering.ClusterSet;
 import java.awt.Toolkit;
 import util.logger;
 

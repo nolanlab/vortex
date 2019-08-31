@@ -4,8 +4,6 @@
  */
 package vortex.gui;
 
-import executionslave.ReusableObject;
-import executionslave.ReusingTask;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
@@ -28,8 +26,8 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import samusik.glasscmp.GlassBorder;
 import umontreal.iro.lecuyer.probdist.EmpiricalDist;
-import clustering.Datapoint;
-import clustering.Dataset;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
 import util.ColorPalette;
 import util.logger;
 

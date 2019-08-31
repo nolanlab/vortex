@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Nikolay
+ * Copyright (C) 2019 Nikolay Samusik and Stanford University
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -20,12 +20,12 @@ package vortex.scripts;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import annotations.Annotation;
-import clustering.AngularDistance;
-import clustering.EuclideanDistance;
-import clustering.ClusterMember;
-import clustering.ClusterSet;
-import clustering.Dataset;
+import sandbox.annotations.Annotation;
+import sandbox.clustering.AngularDistance;
+import sandbox.clustering.EuclideanDistance;
+import sandbox.clustering.ClusterMember;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Dataset;
 import vortex.util.Config;
 import vortex.util.ConnectionManager;
 import util.logger;

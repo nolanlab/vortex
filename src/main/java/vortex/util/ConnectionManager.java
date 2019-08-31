@@ -10,9 +10,9 @@ import javax.swing.JOptionPane;
 import util.logger;
 import vortex.gui.dlgConfiguration;
 import vortex.gui.frmMain;
-import vss.HSQLDBStorageEngine;
-import vss.HSQLDBStorageEngine2;
-import vss.StorageEngine;
+import vortex.storage.HSQLDBStorageEngine;
+import vortex.storage.HSQLDBStorageEngine2;
+import vortex.storage.StorageEngine;
 
 /**
  *
@@ -23,7 +23,7 @@ public class ConnectionManager {
     private static DatabaseHost dbHost;
     private static StorageEngine storageEngine;
 
-    public static vss.StorageEngine getStorageEngine() {
+    public static vortex.storage.StorageEngine getStorageEngine() {
         try {
             String[] s = storageEngine.getAvailableDatasetNames();
         } catch (Exception e) {

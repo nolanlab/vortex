@@ -11,7 +11,7 @@
 package vortex.gui;
 
 import javax.swing.DefaultComboBoxModel;
-import clustering.DistanceMeasure;
+import sandbox.clustering.DistanceMeasure;
 import vortex.util.ClassWrapper;
 import util.logger;
 

@@ -8,7 +8,7 @@ import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
 import umontreal.iro.lecuyer.util.DMatrix;
 import vortex.mahalonobis.CovarianceMatrix;
-import clustering.Datapoint;
+import sandbox.clustering.Datapoint;
 import java.util.Arrays;
 import java.util.Comparator;
 import util.MatrixOp;

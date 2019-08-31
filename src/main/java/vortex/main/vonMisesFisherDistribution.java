@@ -8,7 +8,7 @@
  */
 package vortex.main;
 
-import clustering.MahalonobisSpace;
+import sandbox.clustering.MahalonobisSpace;
 import cern.jet.stat.Gamma;
 import java.sql.*;
 import java.util.Arrays;

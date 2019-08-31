@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Nikolay
+ * Copyright (C) 2019 Nikolay Samusik and Stanford University
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -23,11 +23,11 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import clustering.AngularDistance;
-import dataIO.DatasetImporter;
-import dataIO.DatasetStub;
-import dataIO.ImportConfigObject;
-import clustering.Dataset;
+import sandbox.clustering.AngularDistance;
+import sandbox.dataIO.DatasetImporter;
+import sandbox.dataIO.DatasetStub;
+import sandbox.dataIO.ImportConfigObject;
+import sandbox.clustering.Dataset;
 import util.IO;
 import vortex.util.Config;
 import vortex.util.ConnectionManager;

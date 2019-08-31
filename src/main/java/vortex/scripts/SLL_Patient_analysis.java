@@ -17,18 +17,18 @@
  */
 package vortex.scripts;
 
-import annotations.Annotation;
-import clustering.Cluster;
-import clustering.ClusterSet;
-import clustering.Datapoint;
-import dataIO.DatasetImporter;
-import dataIO.DatasetStub;
-import dataIO.ImportConfigObject;
+import sandbox.annotations.Annotation;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Datapoint;
+import sandbox.dataIO.DatasetImporter;
+import sandbox.dataIO.DatasetStub;
+import sandbox.dataIO.ImportConfigObject;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.LinkedList;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 import util.Optimization;
 import util.logger;
 import vortex.mahalonobis.MahalonobisDistance;

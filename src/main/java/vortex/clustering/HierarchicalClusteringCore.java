@@ -4,13 +4,13 @@
  */
 package vortex.clustering;
 
-import clustering.ClusteringAlgorithm;
-import clustering.DistanceMatrix;
-import clustering.DistanceMeasure;
-import clustering.ClusterSet;
-import clustering.Cluster;
-import clustering.Dataset;
-import clustering.Datapoint;
+import sandbox.clustering.ClusteringAlgorithm;
+import sandbox.clustering.DistanceMatrix;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.Datapoint;
 import javax.swing.JPanel;
 import java.util.ArrayList;
 import java.util.Arrays;

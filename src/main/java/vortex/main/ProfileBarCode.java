@@ -4,7 +4,7 @@
  */
 package vortex.main;
 
-import clustering.BarCode;
+import sandbox.clustering.BarCode;
 
 /**
  *

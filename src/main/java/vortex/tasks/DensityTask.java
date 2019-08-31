@@ -5,16 +5,15 @@
 package vortex.tasks;
 
 import vortex.clustering.Kernel;
-import executionslave.ReusableObject;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 
 /**
  *
  * @author Nikolay
  */
-public class DensityTask implements executionslave.ReusingTask<BigDecimal> {
+public class DensityTask {
 
     protected Dataset dataset;
     protected final double[] center;
@@ -23,8 +22,7 @@ public class DensityTask implements executionslave.ReusingTask<BigDecimal> {
     protected int[] nIDX;
     double precision;
 
-    @Override
-    public void injectReusableObject(ReusableObject localObjects) {
+    public void injectReusableObject(Object localObjects) {
         dataset = (Dataset) localObjects;
     }
 
@@ -46,12 +44,10 @@ public class DensityTask implements executionslave.ReusingTask<BigDecimal> {
         this.precision = precision;
     }
 
-    @Override
     public void cancel() {
         Thread.currentThread().interrupt();
     }
 
-    @Override
     public BigDecimal execute() {
         double[][] ArrayLists = dataset.getVectors();
         BigDecimal dens = kernel.getDensity(center, ArrayLists);

@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.util.Arrays;
-import org.cytobank.fcs_files.events.FcsFile;
+import sandbox.dataIO.DatasetStub;
 import util.logger;
 
 /**
@@ -52,12 +52,12 @@ public class GatedFilesToAnnotationTable implements Script {
                 }
             });
             
-            FcsFile fcsUngated = new FcsFile(file);
+            DatasetStub fcsUngated = DatasetStub.createFromFCS(file);
             
-            logger.print(fcsUngated.getChannelName(0),fcsUngated.getChannelName(9)+fcsUngated.getChannelName(11));
-            long[] hash =new long[fcsUngated.getEventCount()];
+            logger.print(fcsUngated.getShortColumnNames()[0],fcsUngated.getShortColumnNames()[9]+fcsUngated.getShortColumnNames()[11]);
+            long[] hash =new long[(int)fcsUngated.getRowCount()];
             for (int i = 0; i < hash.length; i++) {
-              hash[i] = getHash(fcsUngated.getChannels().getEventArray(i));
+              hash[i] = getHash(fcsUngated.getRow(i));
             }
             
             for (File gf : gated) {
@@ -65,14 +65,14 @@ public class GatedFilesToAnnotationTable implements Script {
                 String annotationTerm = name.substring("BM2_cct_normalized_01_".length(), name.length());
                 
                 if(annotationTerm!=null){
-                    FcsFile fcsGated = new FcsFile(gf);
+                    DatasetStub fcsGated = DatasetStub.createFromFCS(gf);
                
-                    for (int i = 0; i < fcsGated.getEventCount(); i++) {
-                        long gatedHash = getHash(fcsGated.getChannels().getEventArray(i));
+                    for (int i = 0; i < fcsGated.getRowCount(); i++) {
+                        long gatedHash = getHash(fcsGated.getRow(i));
                         boolean found = false;
                         j:for (int j = 0; j < hash.length; j++) {
                             if(hash[j]==gatedHash){
-                                bw.write(fcsUngated.getName()+ " Event "+String.format("%07d", j)+"\t"+annotationTerm+"\n");
+                                bw.write(fcsUngated.getFileName()+ " Event "+String.format("%07d", j)+"\t"+annotationTerm+"\n");
                                 break j;
                             }
                         }

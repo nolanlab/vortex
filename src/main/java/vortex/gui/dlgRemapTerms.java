@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Nikolay
+ * Copyright (C) 2019 Nikolay Samusik and Stanford University
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -22,7 +22,7 @@ import java.util.HashMap;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import samusik.glasscmp.GlassDialog;
-import annotations.Annotation;
+import sandbox.annotations.Annotation;
 import javax.swing.JTable;
 import util.logger;
 
@@ -76,7 +76,7 @@ public class dlgRemapTerms extends GlassDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        org.openide.awt.Mnemonics.setLocalizedText(jButton1, "Create new annotation");
+        jButton1.setText("Create new annotation");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -89,20 +89,20 @@ public class dlgRemapTerms extends GlassDialog {
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel1, "New annotation name:");
+       jLabel1.setText("New annotation name:");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 0, 51));
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel2, "Specify new names for the old annotation terms. Terms that receive the same name will be merged in the new dataset. Terms with empty names will be removed."); // NOI18N
+        jLabel2.setText("Specify new names for the old annotation terms. Terms that receive the same name will be merged in the new dataset. Terms with empty names will be removed."); // NOI18N
 
-        org.openide.awt.Mnemonics.setLocalizedText(jButton2, "Auto-map");
+        jButton2.setText("Auto-map");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel3, "Substring#"); // NOI18N
+       jLabel3.setText("Substring#"); // NOI18N
 
         txtDelimiter.setText("_"); // NOI18N
         txtDelimiter.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +111,7 @@ public class dlgRemapTerms extends GlassDialog {
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jLabel4, "Delimiter:");
+        jLabel4.setText("Delimiter:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

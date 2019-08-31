@@ -2,7 +2,7 @@
 
 package vortex.gui.clusterdendrogram;
 
-import clustering.Cluster;
+import sandbox.clustering.Cluster;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Component;
@@ -44,8 +44,8 @@ import javax.swing.JViewport;
 import javax.swing.border.LineBorder;
 import samusik.hideabletree.*;
 import javax.swing.tree.DefaultTreeModel;
-import annotations.Annotation;
-import clustering.ClusterSet;
+import sandbox.annotations.Annotation;
+import sandbox.clustering.ClusterSet;
 import vortex.gui.frmMain;
 import util.ClusterSetValidationFactory;
 import util.ClusterValidationFactory;

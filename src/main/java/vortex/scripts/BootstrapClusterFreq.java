@@ -5,7 +5,7 @@
  */
 package vortex.scripts;
 
-import dataIO.DatasetStub;
+import sandbox.dataIO.DatasetStub;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Nikolay
+ * Copyright (C) 2019 Nikolay Samusik and Stanford University
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,10 +17,10 @@
  */
 package vortex.main;
 
-import clustering.ClusterSet;
+import sandbox.clustering.ClusterSet;
 import java.sql.SQLException;
 import java.util.HashMap;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 import util.logger;
 import vortex.util.ConnectionManager;
 

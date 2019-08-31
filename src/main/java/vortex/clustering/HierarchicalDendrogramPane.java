@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Nikolay
+ * Copyright (C) 2019 Nikolay Samusik and Stanford University
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -17,7 +17,7 @@
  */
 package vortex.clustering;
 
-import clustering.ClusterSet;
+import sandbox.clustering.ClusterSet;
 
 /**
  *
@@ -58,28 +58,28 @@ HierarchicalDendrogramRenderer dnd;
         jCheckBox1 = new javax.swing.JCheckBox();
         jPanel1 = new javax.swing.JPanel();
 
-        org.openide.awt.Mnemonics.setLocalizedText(cmdCut, org.openide.util.NbBundle.getMessage(HierarchicalDendrogramPane.class, "HierarchicalDendrogramPane.cmdCut.text")); // NOI18N
+        cmdCut.setText("cutDendrogram");
         cmdCut.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdCutActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(cmdZoomPlus, org.openide.util.NbBundle.getMessage(HierarchicalDendrogramPane.class, "HierarchicalDendrogramPane.cmdZoomPlus.text")); // NOI18N
+        cmdZoomPlus.setText("+"); // NOI18N
         cmdZoomPlus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmdZoomPlusActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(CmdZoomMinus, org.openide.util.NbBundle.getMessage(HierarchicalDendrogramPane.class, "HierarchicalDendrogramPane.CmdZoomMinus.text")); // NOI18N
+        CmdZoomMinus.setText("-");
         CmdZoomMinus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CmdZoomMinusActionPerformed(evt);
             }
         });
 
-        org.openide.awt.Mnemonics.setLocalizedText(jCheckBox1, org.openide.util.NbBundle.getMessage(HierarchicalDendrogramPane.class, "HierarchicalDendrogramPane.jCheckBox1.text")); // NOI18N
+        jCheckBox1.setText("Rainbow Rows");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox1ActionPerformed(evt);

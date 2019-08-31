@@ -4,7 +4,7 @@
  */
 package vortex.gui;
 
-import clustering.BarCode;
+import sandbox.clustering.BarCode;
 import java.awt.Component;
 import javax.swing.JTable;
 import java.awt.Color;

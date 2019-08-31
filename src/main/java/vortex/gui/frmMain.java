@@ -5,9 +5,9 @@ package vortex.gui;
  *
  * Created on February 4, 2008, 12:48 PM
  */
-import clustering.ClusterMember;
-import clustering.Dataset;
-import clustering.Mode;
+import sandbox.clustering.ClusterMember;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.Mode;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.io.BufferedWriter;
@@ -25,7 +25,7 @@ import vortex.scripts.Pipelines;
 import vortex.util.Config;
 import vortex.util.ConnectionManager;
 import util.logger;
-import vss.StorageEngine;
+import vortex.storage.StorageEngine;
 
 /**
  * @author Nikolay

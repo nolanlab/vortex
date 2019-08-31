@@ -5,7 +5,7 @@
  */
 package vortex.clustergraph;
 
-import clustering.Cluster;
+import sandbox.clustering.Cluster;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;

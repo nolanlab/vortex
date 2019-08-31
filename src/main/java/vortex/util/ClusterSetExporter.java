@@ -5,9 +5,9 @@
  */
 package vortex.util;
 
-import clustering.Cluster;
-import clustering.ClusterMember;
-import clustering.ClusterSet;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterMember;
+import sandbox.clustering.ClusterSet;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -32,12 +32,12 @@ public class ClusterSetExporter {
                 for (ClusterMember cm : c.getClusterMembers()) {
                     if (firstRow) {
                         br.write("ClusterID,");
-                        br.write(arrToString(cm.getHeaderRow()).replace(",Barcode,", ","));
+                        br.write(arrToString(cm.getHeaderRow()));
                         br.write("\n");
                         firstRow = false;
                     }
                     br.write(c.getID() + ",");
-                    br.write(arrToString(cm.toRow()).replaceAll(",clustering\\.ClusterMember.*,", ","));
+                    br.write(arrToString(cm.toRow()));
                     br.write("\n");
                 }
 

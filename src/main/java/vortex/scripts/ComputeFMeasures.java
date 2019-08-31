@@ -7,10 +7,10 @@ package vortex.scripts;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import annotations.Annotation;
-import clustering.ClusterMember;
-import clustering.ClusterSet;
-import clustering.Dataset;
+import sandbox.annotations.Annotation;
+import sandbox.clustering.ClusterMember;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Dataset;
 import vortex.util.Config;
 import vortex.util.ConnectionManager;
 import util.logger;
@@ -199,7 +199,7 @@ public class ComputeFMeasures {
                 inter[i][j] = 1.0 - fMatrix[i][j];
             }
         }
-        int[] assignments = (new fmeasure.HungarianAlgorithm(inter)).execute();
+        int[] assignments = (new sandbox.fmeasure.HungarianAlgorithm(inter)).execute();
         for (int i = 0; i < assignments.length; i++) {
             if (assignments[i] != -1) {
                 out[i][assignments[i]] = fMatrix[i][assignments[i]];

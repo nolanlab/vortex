@@ -8,7 +8,7 @@ package vortex.gui.clusterdendrogram;
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JPanel;
-import clustering.ClusterSet;
+import sandbox.clustering.ClusterSet;
 import util.ClusterSetValidationFactory;
 import util.ClusterSetValidationMeasure;
 import java.lang.Math.*;

@@ -6,8 +6,8 @@ package vortex.util;
 
 import java.sql.SQLException;
 import javax.swing.table.DefaultTableModel;
-import annotations.Annotation;
-import clustering.Cluster;
+import sandbox.annotations.Annotation;
+import sandbox.clustering.Cluster;
 import java.util.Arrays;
 import util.MatrixOp;
 

@@ -5,7 +5,7 @@
  */
 package vortex.clustergraph;
 
-import clustering.ClusterMember;
+import sandbox.clustering.ClusterMember;
 import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;

@@ -4,10 +4,10 @@
  */
 package vortex.clustering;
 
-import clustering.ClusteringAlgorithm;
-import clustering.DistanceMeasure;
-import clustering.EuclideanDistance;
-import clustering.AngularDistance;
+import sandbox.clustering.ClusteringAlgorithm;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.EuclideanDistance;
+import sandbox.clustering.AngularDistance;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.sql.SQLException;
@@ -23,12 +23,12 @@ import javax.swing.JPanel;
 import javax.xml.crypto.Data;
 
 import vortex.mahalonobis.MahalonobisDistance;
-import clustering.Cluster;
-import clustering.ClusterMember;
-import clustering.ClusterSet;
-import clustering.Datapoint;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterMember;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Datapoint;
 import java.util.HashMap;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 import java.util.Objects;
 import vortex.util.ConnectionManager;
 import util.DefaultEntry;

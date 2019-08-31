@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.TableModel;
 import samusik.glasscmp.GlassDialog;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 
 /**
  *

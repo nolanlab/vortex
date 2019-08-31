@@ -17,13 +17,13 @@ import umontreal.iro.lecuyer.randvarmulti.RandomMultivariateGen;
 import umontreal.iro.lecuyer.rng.GenF2w32;
 import umontreal.iro.lecuyer.rng.MRG31k3p;
 import umontreal.iro.lecuyer.rng.MRG32k3a;
-import clustering.AngularDistance;
+import sandbox.clustering.AngularDistance;
 import vortex.clustering.XShiftClustering;
-import clustering.Cluster;
-import clustering.ClusterMember;
-import clustering.ClusterSet;
-import clustering.Datapoint;
-import clustering.Dataset;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterMember;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
 import util.logger;
 
 /**

@@ -37,7 +37,7 @@ public class MahalonobisDistance {
     
     
     
-    public MahalonobisDistance(clustering.Cluster c) {
+    public MahalonobisDistance(sandbox.clustering.Cluster c) {
         //Compute the center of the cluster
         
             //logger.print("starting Mahalonobis Distance init");
@@ -46,7 +46,7 @@ public class MahalonobisDistance {
             for (int i = 0; i < c.size(); i++) {
                 dataTable[i] = c.getClusterMembers()[i].getDatapoint().getVector();
             }
-            clustering.ClusterMember[] cm = c.getClusterMembers();
+            sandbox.clustering.ClusterMember[] cm = c.getClusterMembers();
             double[] vec = MatrixOp.copy(cm[0].getDatapoint().getVector());
             for (int i = 1; i < cm.length; i++) {
                 double[] vec2 = cm[i].getDatapoint().getVector();

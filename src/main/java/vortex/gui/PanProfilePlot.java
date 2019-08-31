@@ -5,9 +5,9 @@
  */
 package vortex.gui;
 
-import clustering.Cluster;
-import clustering.ClusterMember;
-import clustering.ClusterSet;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterMember;
+import sandbox.clustering.ClusterSet;
 import java.awt.Color;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;

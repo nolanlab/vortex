@@ -5,11 +5,11 @@
  */
 package vortex.gui;
 
-import clustering.ClusterSet;
-import clustering.Cluster;
-import clustering.ClusterMember;
-import clustering.Dataset;
-import clustering.Datapoint;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterMember;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.Datapoint;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
 import cern.colt.matrix.linalg.Algebra;
@@ -37,17 +37,13 @@ import org.math.plot.PlotPanel;
 import org.math.plot.canvas.PlotCanvas;
 import org.math.plot.components.LegendPanel;
 import org.math.plot.plots.Plot;
-//import tsne.tSNE3;
 import samusik.glasscmp.GlassBorder;
 import samusik.glasscmp.GlassFrame;
-import clustering.AngularDistance;
-import clustering.DistanceMeasure;
-import clustering.EuclideanDistance;
+import sandbox.clustering.AngularDistance;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.EuclideanDistance;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import org.gephi.preview.types.DependantColor;
-import org.gephi.preview.types.DependantOriginalColor;
-import util.ColorPalette;
 import util.MatrixOp;
 import vortex.util.ProfilePCA;
 import util.logger;

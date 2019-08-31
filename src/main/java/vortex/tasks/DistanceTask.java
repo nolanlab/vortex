@@ -4,18 +4,17 @@
  */
 package vortex.tasks;
 
-import executionslave.ReusableObject;
 import java.util.ArrayList;
 import java.util.Arrays;
-import clustering.Datapoint;
-import clustering.Dataset;
-import clustering.DistanceMeasure;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.DistanceMeasure;
 
 /**
  *
  * @author Nikolay
  */
-public class DistanceTask implements executionslave.ReusingTask<double[]> {
+public class DistanceTask  {
 
     private Datapoint[] ArrayLists;
     private DistanceMeasure dm;
@@ -32,13 +31,11 @@ public class DistanceTask implements executionslave.ReusingTask<double[]> {
         this.dm = dm;
     }
 
-    @Override
     public void cancel() {
         Thread.currentThread().interrupt();
     }
 
-    @Override
-    public void injectReusableObject(ReusableObject localObjects) {
+    public void injectReusableObject(Object localObjects) {
         ArrayLists = ((Dataset) localObjects).getDatapoints();
     }
 
@@ -49,7 +46,6 @@ public class DistanceTask implements executionslave.ReusingTask<double[]> {
      * @param i
      * @return
      */
-    @Override
     public double[] execute() {
         double[] arr = new double[to - from];
         double dist = 0;

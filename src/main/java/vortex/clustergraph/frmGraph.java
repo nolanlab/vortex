@@ -55,18 +55,18 @@ import org.gephi.preview.types.EdgeColor;
 import org.gephi.project.api.ProjectController;
 import org.openide.util.Lookup;
 import umontreal.iro.lecuyer.probdist.NormalDist;
-import annotations.Annotation;
+import sandbox.annotations.Annotation;
 import cern.colt.matrix.DoubleMatrix2D;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
 import cern.colt.matrix.linalg.Algebra;
-import clustering.AngularDistance;
-import clustering.Cluster;
-import clustering.ClusterMember;
+import sandbox.clustering.AngularDistance;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterMember;
 import util.HypergeometricDist;
-import clustering.Datapoint;
-import clustering.Dataset;
-import clustering.DistanceMeasure;
-import clustering.EuclideanDistance;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.EuclideanDistance;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.Image;
@@ -130,11 +130,7 @@ public class frmGraph extends javax.swing.JFrame {
 
     final PreviewSketch previewSketch;
 
-    /**
-     *
-     * @param clusters
-     * @param graphType - Allowed values are "MST", "DMT" and "ModuleMap"
-     */
+
     private ColorScale.ScalingMode getColorScalingMode() {
         if (rbQuantile.isSelected()) {
             return ColorScale.ScalingMode.QUANTILE;
@@ -706,9 +702,9 @@ public class frmGraph extends javax.swing.JFrame {
 
             graph = graphModel.getDirectedGraph();
 
-            HashMap<ClusterPhylogeny_old.ClusterTreeNode, Node> hmNodes = new HashMap<>();
+            HashMap<ClusterTreeNode, Node> hmNodes = new HashMap<>();
 
-            ClusterPhylogeny_old.ClusterTreeNode root = (new ClusterPhylogeny_old()).getDivisiveMarkerTree(clusters);
+            ClusterTreeNode root = (new ClusterPhylogeny()).getDivisiveMarkerTree(clusters);
 
             Enumeration<HierarchicalCentroid> enu = root.breadthFirstEnumeration();
 
@@ -717,7 +713,7 @@ public class frmGraph extends javax.swing.JFrame {
             graph.getModel().getNodeTable().addColumn("hd-label", String.class);
 
             while (enu.hasMoreElements()) {
-                ClusterPhylogeny_old.ClusterTreeNode cn = (ClusterPhylogeny_old.ClusterTreeNode) enu.nextElement();
+                ClusterTreeNode cn = (ClusterTreeNode) enu.nextElement();
                 Node n0 = cn.isRoot() ? graph.getModel().factory().newNode("root") : graph.getModel().factory().newNode();
                 if (cn.getUserObject().length == 1) {
                     Cluster c = cn.getUserObject()[0].getCluster();
@@ -731,7 +727,7 @@ public class frmGraph extends javax.swing.JFrame {
                     n0.setAttribute("cluster", c.getID());
                 } else {
                     int size = 0;
-                    for (ClusterPhylogeny_old.ClusterDatapoint cluster : cn.getUserObject()) {
+                    for (ClusterPhylogeny.ClusterDatapoint cluster : cn.getUserObject()) {
                         size += cluster.c.getAvgSize();
                     }
                     n0.setX((float) cn.getClusterMembers()[0].getDatapoint().getVector()[0]);
@@ -754,7 +750,7 @@ public class frmGraph extends javax.swing.JFrame {
             enu = root.breadthFirstEnumeration();
 
             while (enu.hasMoreElements()) {
-                ClusterPhylogeny_old.ClusterTreeNode cn = (ClusterPhylogeny_old.ClusterTreeNode) enu.nextElement();
+                ClusterTreeNode cn = (ClusterTreeNode) enu.nextElement();
                 Node currNode = hmNodes.get(cn);
                 for (int i = 0; i < cn.getChildCount(); i++) {
                     Node childNode = hmNodes.get(cn.getChildAt(i));

@@ -10,9 +10,9 @@
  */
 package vortex.clustering;
 
-import clustering.DistanceMeasure;
-import clustering.EuclideanDistance;
-import clustering.AngularDistance;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.EuclideanDistance;
+import sandbox.clustering.AngularDistance;
 import java.util.Arrays;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.SpinnerNumberModel;
@@ -29,7 +29,6 @@ public class KernelFactory extends javax.swing.JPanel {
     int steps;
     double step;
     DistanceMeasure dm;
-
 
     /**
      * Creates new form KernelFactory

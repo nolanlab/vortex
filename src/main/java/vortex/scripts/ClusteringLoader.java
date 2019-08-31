@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 Nikolay
+ * Copyright (C) 2019 Nikolay Samusik and Stanford University
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -23,12 +23,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import org.cytobank.fcs_files.events.FcsFile;
-import clustering.EuclideanDistance;
-import clustering.Cluster;
-import clustering.ClusterSet;
-import clustering.Datapoint;
-import clustering.Dataset;
+import sandbox.clustering.EuclideanDistance;
+import sandbox.clustering.Cluster;
+import sandbox.clustering.ClusterSet;
+import sandbox.clustering.Datapoint;
+import sandbox.clustering.Dataset;
+import sandbox.dataIO.DatasetStub;
 import util.logger;
 
 /**
@@ -45,19 +45,19 @@ public class ClusteringLoader {
             int currParam = freeParam[i];
             //logger.print("loading " +  currParam);
             List<Datapoint>[] clusters = new List[currParam];
-            FcsFile fcs = new FcsFile(dir.getPath() + File.separator + currParam + File.separator + d.getName() + "_Ungated.fcs.density.fcs.cluster.fcs");
+            DatasetStub fcs = DatasetStub.createFromFCS(new File(dir.getPath() + File.separator + currParam + File.separator + d.getName() + "_Ungated.fcs.density.fcs.cluster.fcs"));
 
             int clusterChannelIdx = -1;
 
-            for (int j = 0; j < fcs.getChannelCount(); j++) {
-                if (fcs.getChannelName(j).equalsIgnoreCase("cluster")) {
+            for (int j = 0; j < fcs.getShortColumnNames().length; j++) {
+                if (fcs.getShortColumnNames()[j].equalsIgnoreCase("cluster")) {
                     clusterChannelIdx = j;
                     break;
                 }
             }
             
-            for (int j = 0; j < fcs.getEventCount(); j++) {
-                int cid = (int) fcs.getChannels().getEventArray(j)[clusterChannelIdx] - 1;
+            for (int j = 0; j < fcs.getRowCount(); j++) {
+                int cid = (int) fcs.getRow(j)[clusterChannelIdx] - 1;
                 if (Integer.parseInt(d.getDatapoints()[j].getFullName().split("Event")[1].trim()) != j) {
                     logger.print("Error: " + d.getDatapoints()[j].getFullName() + " doesnt match " + j);
                 }

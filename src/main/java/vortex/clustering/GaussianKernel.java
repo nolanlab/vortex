@@ -4,13 +4,13 @@
  */
 package vortex.clustering;
 
-import clustering.DistanceMeasure;
-import clustering.EuclideanDistance;
+import sandbox.clustering.DistanceMeasure;
+import sandbox.clustering.EuclideanDistance;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
 import cern.colt.matrix.linalg.Algebra;
 import java.math.BigDecimal;
 import java.math.MathContext;
-import clustering.Dataset;
+import sandbox.clustering.Dataset;
 import umontreal.iro.lecuyer.probdistmulti.MultiNormalDist;
 import util.MatrixOp;
 import util.logger;
