@@ -1,0 +1,594 @@
+BRSK1	Atg1 kinase and its regulators
+BRSK2	Atg1 kinase and its regulators
+CAMK1	Atg1 kinase and its regulators
+CAMK1D	Atg1 kinase and its regulators
+CAMK1G	Atg1 kinase and its regulators
+CAMK2A	Atg1 kinase and its regulators
+CAMK2B	Atg1 kinase and its regulators
+CAMK2D	Atg1 kinase and its regulators
+CAMK2G	Atg1 kinase and its regulators
+DAPK3	Atg1 kinase and its regulators
+DCLK1	Atg1 kinase and its regulators
+MARK1	Atg1 kinase and its regulators
+MARK2	Atg1 kinase and its regulators
+MARK3	Atg1 kinase and its regulators
+MARK4	Atg1 kinase and its regulators
+NUAK1	Atg1 kinase and its regulators
+NUAK2	Atg1 kinase and its regulators
+PLK3	Atg1 kinase and its regulators
+PLK4	Atg1 kinase and its regulators
+PNCK	Atg1 kinase and its regulators
+PRKAA1	Atg1 kinase and its regulators
+PRKAA2	Atg1 kinase and its regulators
+QSK	Atg1 kinase and its regulators
+SIK1	Atg1 kinase and its regulators
+SIK2	Atg1 kinase and its regulators
+SNRK	Atg1 kinase and its regulators
+STK33	Atg1 kinase and its regulators
+STK36	Atg1 kinase and its regulators
+ULK1	Atg1 kinase and its regulators
+ULK2	Atg1 kinase and its regulators
+ULK4	Atg1 kinase and its regulators
+AKT1	Atg1 kinase and its regulators
+AKT2	Atg1 kinase and its regulators
+AKT3	Atg1 kinase and its regulators
+ATG13	Atg1 kinase and its regulators
+CHD9	Atg1 kinase and its regulators
+HARBI1	Atg1 kinase and its regulators
+KIAA0652	Atg1 kinase and its regulators
+RPS6KB1	Atg1 kinase and its regulators
+RPS6KB2	Atg1 kinase and its regulators
+SGK1	Atg1 kinase and its regulators
+SGK2	Atg1 kinase and its regulators
+SGK3	Atg1 kinase and its regulators
+CALCOCO1	Atg1 kinase and its regulators
+CCDC21	Atg1 kinase and its regulators
+MYO18A	Atg1 kinase and its regulators
+PHLDB2	Atg1 kinase and its regulators
+PLCXD2	Atg1 kinase and its regulators
+ROCK1	Atg1 kinase and its regulators
+TMF1	Atg1 kinase and its regulators
+TPR	Atg1 kinase and its regulators
+BECN1	PtdIns 3-kinase complex
+BECN1L1	PtdIns 3-kinase complex
+CCDC88A	PtdIns 3-kinase complex
+CEP120	PtdIns 3-kinase complex
+CROCC	PtdIns 3-kinase complex
+CTTNBP2	PtdIns 3-kinase complex
+CTTNBP2NL	PtdIns 3-kinase complex
+DNAH9	PtdIns 3-kinase complex
+EPS15	PtdIns 3-kinase complex
+KIF21A	PtdIns 3-kinase complex
+KIF21B	PtdIns 3-kinase complex
+MYH10	PtdIns 3-kinase complex
+MYH11	PtdIns 3-kinase complex
+MYH9	PtdIns 3-kinase complex
+MYO5C	PtdIns 3-kinase complex
+NINL	PtdIns 3-kinase complex
+RAB11FIP3	PtdIns 3-kinase complex
+RAB11FIP4	PtdIns 3-kinase complex
+ROCK2	PtdIns 3-kinase complex
+SWAP70	PtdIns 3-kinase complex
+ATG14	PtdIns 3-kinase complex
+ATG14L	PtdIns 3-kinase complex
+C9orf96	PtdIns 3-kinase complex
+CAMK1	PtdIns 3-kinase complex
+CDKL2	PtdIns 3-kinase complex
+PIK3C3	PtdIns 3-kinase complex
+MAPK1	PtdIns 3-kinase complex
+MAPK3	PtdIns 3-kinase complex
+MARK1	PtdIns 3-kinase complex
+MARK2	PtdIns 3-kinase complex
+MARK3	PtdIns 3-kinase complex
+MARK4	PtdIns 3-kinase complex
+PHKG1	PtdIns 3-kinase complex
+PIK3R4	PtdIns 3-kinase complex
+PRKAA1	PtdIns 3-kinase complex
+PRKAA2	PtdIns 3-kinase complex
+QSK	PtdIns 3-kinase complex
+SIK1	PtdIns 3-kinase complex
+SIK2	PtdIns 3-kinase complex
+SIK3	PtdIns 3-kinase complex
+TMEM74	PtdIns 3-kinase complex
+ATG5	Atg12 conjugation system
+OSGEP	Atg12 conjugation system
+OSGEPL1	Atg12 conjugation system
+ATG7	Atg12 conjugation system
+MOCS3	Atg12 conjugation system
+UBA1	Atg12 conjugation system
+UBA2	Atg12 conjugation system
+UBA3	Atg12 conjugation system
+UBA6	Atg12 conjugation system
+ATG10	Atg12 conjugation system
+CNNM2	Atg12 conjugation system
+CNNM4	Atg12 conjugation system
+ATG12	Atg12 conjugation system
+DES	Atg12 conjugation system
+EEF1A1	Atg12 conjugation system
+EEF1A2	Atg12 conjugation system
+ENSP00000395046	Atg12 conjugation system
+GFAP	Atg12 conjugation system
+INA	Atg12 conjugation system
+LOC100293909	Atg12 conjugation system
+NEFL	Atg12 conjugation system
+NEFM	Atg12 conjugation system
+PRPH	Atg12 conjugation system
+PRPH2	Atg12 conjugation system
+VIM	Atg12 conjugation system
+ACTA1	Atg12 conjugation system
+ACTA2	Atg12 conjugation system
+ACTB	Atg12 conjugation system
+ACTBL2	Atg12 conjugation system
+ACTC1	Atg12 conjugation system
+ACTG1	Atg12 conjugation system
+ACTG2	Atg12 conjugation system
+ATG16L1	Atg12 conjugation system
+ATG16L2	Atg12 conjugation system
+DCTN1	Atg12 conjugation system
+EPS15L1	Atg12 conjugation system
+FBXW7	Atg12 conjugation system
+ITSN1	Atg12 conjugation system
+KIF5A	Atg12 conjugation system
+LOC653269	Atg12 conjugation system
+P704P	Atg12 conjugation system
+PAFAH1B1	Atg12 conjugation system
+SNRNP40	Atg12 conjugation system
+TM9SF1	Atg12 conjugation system
+TM9SF2	Atg12 conjugation system
+TM9SF3	Atg12 conjugation system
+TM9SF4	Atg12 conjugation system
+WDR5	Atg12 conjugation system
+WDR5B	Atg12 conjugation system
+WDR69	Atg12 conjugation system
+ATG10	Atg8 conjugation system
+ATG3	Atg8 conjugation system
+ATG4A	Atg8 conjugation system
+ATG4B	Atg8 conjugation system
+ATG4C	Atg8 conjugation system
+ATG4D	Atg8 conjugation system
+ATG7	Atg8 conjugation system
+MOCS3	Atg8 conjugation system
+UBA1	Atg8 conjugation system
+UBA2	Atg8 conjugation system
+UBA3	Atg8 conjugation system
+UBA6	Atg8 conjugation system
+GABARAP	Atg8 conjugation system
+GABARAPL1	Atg8 conjugation system
+GABARAPL2	Atg8 conjugation system
+GABARAPL3	Atg8 conjugation system
+LOC652191	Atg8 conjugation system
+MAP1LC3A	Atg8 conjugation system
+MAP1LC3B	Atg8 conjugation system
+MAP1LC3B2	Atg8 conjugation system
+MAP1LC3C	Atg8 conjugation system
+SSSCA1	Atg8 conjugation system
+ULK3	Atg8 conjugation system
+ATG2A	Atg2-Atg18 complex
+ATG2B	Atg2-Atg18 complex
+VPS13A	Atg2-Atg18 complex
+VPS13C	Atg2-Atg18 complex
+VPS13D	Atg2-Atg18 complex
+NLE1	Atg2-Atg18 complex
+WDR45	Atg2-Atg18 complex
+WDR45L	Atg2-Atg18 complex
+WIPI1	Atg2-Atg18 complex
+WIPI2	Atg2-Atg18 complex
+	Atg9
+ABCB6	Atg9
+APEX1	Atg9
+ATG9A	Atg9
+ATG9B	Atg9
+C11orf24	Atg9
+C20orf151	Atg9
+C2orf16	Atg9
+CIC	Atg9
+FGFR1	Atg9
+FLG	Atg9
+FLG2	Atg9
+FMN2	Atg9
+FNDC1	Atg9
+IWS1	Atg9
+LEO1	Atg9
+MAP7D1	Atg9
+Mb3875	Atg9
+MLL2	Atg9
+MLL4	Atg9
+MUC1	Atg9
+NACA	Atg9
+PCLO	Atg9
+POLR2A	Atg9
+PRB3	Atg9
+REEP6	Atg9
+RERE	Atg9
+SETD5	Atg9
+ZNF828	Atg9
+	Cvt pathway
+CUX1	Cvt pathway
+DNAH5	Cvt pathway
+DNAH8	Cvt pathway
+LOC652164	Cvt pathway
+LOC653513	Cvt pathway
+LOC727927	Cvt pathway
+MYO18A	Cvt pathway
+PDE4DIP	Cvt pathway
+TIAF1	Cvt pathway
+	Cvt pathway
+SNX18	Cvt pathway
+SNX2	Cvt pathway
+SNX3	Cvt pathway
+SNX32	Cvt pathway
+SNX5	Cvt pathway
+SNX6	Cvt pathway
+BCAS3	Cvt pathway
+PRAF2	Cvt pathway
+WDR45	Cvt pathway
+WDR45L	Cvt pathway
+WIPI1	Cvt pathway
+WIPI2	Cvt pathway
+AZI1	Cvt pathway
+CCDC88C	Cvt pathway
+CDC42BPB	Cvt pathway
+DSP	Cvt pathway
+DSPP	Cvt pathway
+HIP1	Cvt pathway
+KIF16B	Cvt pathway
+LAMA2	Cvt pathway
+SPTBN5	Cvt pathway
+SYNE2	Cvt pathway
+TAX1BP1	Cvt pathway
+UACA	Cvt pathway
+ACTA1	Cvt pathway
+ACTA2	Cvt pathway
+ACTB	Cvt pathway
+ACTC1	Cvt pathway
+ACTG1	Cvt pathway
+ACTG2	Cvt pathway
+ACTR2	Cvt pathway
+ACTR3	Cvt pathway
+ACTR3B	Cvt pathway
+ACTR3C	Cvt pathway
+ENSP00000380341	Cvt pathway
+SNX2	Cvt pathway
+SNX30	Cvt pathway
+SNX33	Cvt pathway
+SNX4	Cvt pathway
+SNX7	Cvt pathway
+IGF2R	Cvt pathway
+CLSTN1	Cvt pathway
+PIK3C3	Cvt pathway
+PIK3C2A	Cvt pathway
+PIK3C2B	Cvt pathway
+PIK3C2G	Cvt pathway
+PIK3C3	Cvt pathway
+PIK3CA	Cvt pathway
+PIK3CB	Cvt pathway
+PIK3CD	Cvt pathway
+PIK3CG	Cvt pathway
+CUX1	Pexophagy
+DNAH5	Pexophagy
+DNAH8	Pexophagy
+LOC652164	Pexophagy
+LOC653513	Pexophagy
+LOC727927	Pexophagy
+MYO18A	Pexophagy
+PDE4DIP	Pexophagy
+TIAF1	Pexophagy
+LOC100294331	Pexophagy
+SLC2A1	Pexophagy
+SLC2A14	Pexophagy
+SLC2A2	Pexophagy
+SLC2A3	Pexophagy
+SLC2A4	Pexophagy
+SLC2A5	Pexophagy
+SLC2A7	Pexophagy
+SLC2A9	Pexophagy
+UGT1A1	Pexophagy
+UGT1A10	Pexophagy
+UGT1A3	Pexophagy
+UGT1A4	Pexophagy
+UGT1A5	Pexophagy
+UGT1A6	Pexophagy
+UGT1A7	Pexophagy
+UGT1A8	Pexophagy
+UGT1A9	Pexophagy
+UGT2A1	Pexophagy
+UGT2A2	Pexophagy
+UGT2A3	Pexophagy
+UGT2B10	Pexophagy
+UGT2B11	Pexophagy
+UGT2B15	Pexophagy
+UGT2B17	Pexophagy
+UGT2B28	Pexophagy
+UGT2B4	Pexophagy
+UGT2B7	Pexophagy
+UGT3A2	Pexophagy
+UGT8	Pexophagy
+LOC652797	Pexophagy
+PKLR	Pexophagy
+PKM2	Pexophagy
+	Autophagic degradation and recycle
+FLVCR1	Autophagic degradation and recycle
+FLVCR2	Autophagic degradation and recycle
+LOC100133772	Autophagic degradation and recycle
+SLC16A5	Autophagic degradation and recycle
+ANTXR1	Others
+ATM	Others
+ATR	Others
+GCN1L1	Others
+LOC440354	Others
+LOC648152	Others
+LOC651610	Others
+LOC651921	Others
+LOC731751	Others
+MMAB	Others
+MTOR	Others
+PRKDC	Others
+SERPINA2	Others
+SMG1	Others
+TRRAP	Others
+ANTXR1	Others
+ATM	Others
+ATR	Others
+LOC100288704	Others
+LOC440354	Others
+LOC648152	Others
+LOC651610	Others
+LOC651921	Others
+LOC731751	Others
+MMAB	Others
+PRKDC	Others
+SERPINA2	Others
+SMG1	Others
+TRRAP	Others
+CDC42BPA	Others
+EZR	Others
+UVRAG	Others
+WDR87	Others
+ARHGAP17	Others
+ARHGAP44	Others
+SH3GL1	Others
+SH3GL2	Others
+SH3GL3	Others
+SH3GLB1	Others
+SH3GLB2	Others
+DRAM	Others
+DRAM1	Others
+DRAM2	Others
+TMEM150A	Others
+TMEM150B	Others
+TMEM150C	Others
+AMBRA1	Others
+FBXW7	Others
+KATNB1	Others
+POC1A	Others
+POC1B	Others
+SPAG16	Others
+WDR38	Others
+WDR47	Others
+WDR5	Others
+WDR5B	Others
+WDR69	Others
+AKAP9	Others
+CGNL1	Others
+CIT	Others
+CLIP1	Others
+DHDDS	Others
+KIF15	Others
+MYH1	Others
+MYH13	Others
+MYH4	Others
+MYH8	Others
+RB1CC1	Others
+C12ORF44	Others
+EEA1	Others
+FGD4	Others
+FGD5	Others
+FGD6	Others
+HGS	Others
+MTMR3	Others
+MTMR4	Others
+PIKFYVE	Others
+PLEKHF2	Others
+RUFY1	Others
+RUFY2	Others
+WDFY2	Others
+ZFYVE1	Others
+ZFYVE28	Others
+BAK1	Others
+BAX	Others
+BCL2	Others
+BCL2A1	Others
+BCL2L1	Others
+BCL2L2	Others
+BOK	Others
+LOC100289713	Others
+MCL1	Others
+DLG1	Others
+DLG2	Others
+DLG3	Others
+DLG4	Others
+GOPC	Others
+GRIP1	Others
+GRIP2	Others
+INADL	Others
+LGALS12	Others
+LIN7A	Others
+LIN7B	Others
+LIN7C	Others
+LLGL1	Others
+LNX1	Others
+MPDZ	Others
+MPP2	Others
+MPP3	Others
+MYH2	Others
+MYH3	Others
+MYH6	Others
+MYH7	Others
+NCOA2	Others
+PDZRN3	Others
+SNTA1	Others
+SNTB1	Others
+SNTB2	Others
+SNTG1	Others
+SNTG2	Others
+TMEM49	Others
+RAB11A	Others
+RAB11B	Others
+RAB17	Others
+RAB1A	Others
+RAB1B	Others
+RAB22A	Others
+RAB31	Others
+RAB43	Others
+RAB5A	Others
+RAB5B	Others
+RAB5C	Others
+RAB6A	Others
+IL18R1	Others
+IL1RAP	Others
+MYD88	Others
+TIRAP	Others
+TLR1	Others
+TLR10	Others
+TLR2	Others
+TLR4	Others
+TLR6	Others
+RUBICON	Others
+P62/SQSTM1	Others
+C6orf106	Others
+HERC2	Others
+MIB1	Others
+MIB2	Others
+NBR1	Others
+SQSTM1	Others
+ZZEF1	Others
+BIF-1	Others
+VMP1	Others
+TP53INP1	Others
+TP53INP2	Others
+BNIP3	Others
+BNIP3L	Others
+ARMC4	Others
+KPNA1	Others
+KPNA2	Others
+KPNA3	Others
+KPNA4	Others
+KPNA5	Others
+KPNA6	Others
+LC3B	Others
+GFAP	Others
+EF1A	Others
+TM9SF1	Others
+TMEM166	Others
+TMEM74	Others
+ULK3	Others
+P27	Others
+APE1	Others
+ARP2	Others
+ARP3	Others
+CUX1	CVT Pathway/11
+DNAH5	CVT Pathway/11
+DNAH8	CVT Pathway/11
+LOC652164	CVT Pathway/11
+LOC653513	CVT Pathway/11
+LOC727927	CVT Pathway/11
+MYO18A	CVT Pathway/11
+PDE4DIP	CVT Pathway/11
+TIAF1	CVT Pathway/11
+SNX1	CVT Pathway/20
+SNX18	CVT Pathway/20
+SNX2	CVT Pathway/20
+SNX3	CVT Pathway/20
+SNX32	CVT Pathway/20
+SNX5	CVT Pathway/20
+SNX6	CVT Pathway/20
+BCAS3	CVT Pathway/21
+PRAF2	CVT Pathway/21
+WDR45	CVT Pathway/21
+WDR45L	CVT Pathway/21
+WIPI1	CVT Pathway/21
+WIPI2	CVT Pathway/21
+AZI1	CVT Pathway/23
+CCDC88C	CVT Pathway/23
+CDC42BPB	CVT Pathway/23
+DSP	CVT Pathway/23
+DSPP	CVT Pathway/23
+HIP1	CVT Pathway/23
+KIF16B	CVT Pathway/23
+LAMA2	CVT Pathway/23
+SPTBN5	CVT Pathway/23
+SYNE2	CVT Pathway/23
+TAX1BP1	CVT Pathway/23
+UACA	CVT Pathway/23
+ACTA1	CVT Pathway/24
+ACTA2	CVT Pathway/24
+ACTB	CVT Pathway/24
+ACTC1	CVT Pathway/24
+ACTG1	CVT Pathway/24
+ACTG2	CVT Pathway/24
+ACTR2	CVT Pathway/24
+ACTR3	CVT Pathway/24
+ACTR3B	CVT Pathway/24
+ACTR3C	CVT Pathway/24
+SNX2	CVT Pathway/24
+SNX30	CVT Pathway/24
+SNX33	CVT Pathway/24
+SNX4	CVT Pathway/24
+SNX7	CVT Pathway/24
+CLSTN1	CVT Pathway/38
+PIK3C3	CVT Pathway/38
+PIK3C2A	CVT Pathway/38
+PIK3C2B	CVT Pathway/38
+PIK3C2G	CVT Pathway/38
+PIK3C3	CVT Pathway/38
+PIK3CA	CVT Pathway/38
+PIK3CB	CVT Pathway/38
+PIK3CD	CVT Pathway/38
+PIK3CG	CVT Pathway/38
+FRAP1	Autophagy Thierry
+PIK3C3	Autophagy Thierry
+PRKAA1	Autophagy Thierry
+PRKAA2	Autophagy Thierry
+PRKAB1	Autophagy Thierry
+PRKAB2	Autophagy Thierry
+RHEB	Autophagy Thierry
+TSC1	Autophagy Thierry
+TSC2	Autophagy Thierry
+UVRAG	Autophagy Thierry
+ULK1	Autophagy Thierry
+BECN1	Autophagy Thierry
+SQSTM1	Autophagy Thierry
+ATG12	Autophagy Thierry
+ATG5	Autophagy Thierry
+ULK2	Autophagy Thierry
+KIAA0226	Autophagy Thierry
+KIAA0652	Autophagy Thierry
+RB1CC1	Autophagy Thierry
+ATG7	Autophagy Thierry
+GABARAP	Autophagy Thierry
+GABARAPL2	Autophagy Thierry
+KIAA0831	Autophagy Thierry
+ATG2A	Autophagy Thierry
+ATG4B	Autophagy Thierry
+GABARAPL1	Autophagy Thierry
+ULK3	Autophagy Thierry
+PIK3R4	Autophagy Thierry
+SH3GLB1	Autophagy Thierry
+ZFYVE1	Autophagy Thierry
+ATG16L1	Autophagy Thierry
+WIPI1	Autophagy Thierry
+ATG2B	Autophagy Thierry
+AMBRA1	Autophagy Thierry
+C12orf44	Autophagy Thierry
+MTMR14	Autophagy Thierry
+ATG3	Autophagy Thierry
+ATG9A	Autophagy Thierry
+MAP1LC3B	Autophagy Thierry
+RAB33B	Autophagy Thierry
+ATG10	Autophagy Thierry
+MAP1LC3A	Autophagy Thierry
+ATG4C	Autophagy Thierry
+ATG4D	Autophagy Thierry
+ATG16L2	Autophagy Thierry
+ATG4A	Autophagy Thierry
+ATG9B	Autophagy Thierry

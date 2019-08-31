@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-build with dep as single jar</actionName>
+            <displayName>build with dep as single jar</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>compile</goal>
+                <goal>assembly:single</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-Xmx16G -classpath %classpath vortex.gui.frmMain</exec.args>
+                <exec.executable>java</exec.executable>
+                <exec.workingdir>C:\Users\Nikolay Samusik\OneDrive\DEV\Distributives\VorteX 5-15-2017</exec.workingdir>
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -Xmx16G -classpath %classpath vortex.gui.frmMain</exec.args>
+                <exec.executable>java</exec.executable>
+                <jpda.listen>true</jpda.listen>
+                <exec.workingdir>C:\Users\Nikolay Samusik\OneDrive\DEV\Distributives\VorteX 5-15-2017</exec.workingdir>
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-Xmx16G -classpath %classpath vortex.gui.frmMain</exec.args>
+                <exec.executable>java</exec.executable>
+                <exec.workingdir>C:\Users\Nikolay Samusik\OneDrive\DEV\Distributives\VorteX 5-15-2017</exec.workingdir>
+            </properties>
+        </action>
+    </actions>
