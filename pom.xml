@@ -14,6 +14,13 @@
             <version>2.5.0</version>
         </dependency>
         
+                <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
 
         <dependency>
             <groupId>com.github.yannrichet</groupId>
@@ -26,12 +33,13 @@
             <version>1.2.1</version>
         </dependency>
         
-        <!-- https://mvnrepository.com/artifact/org.netbeans.modules/org-netbeans-modules-masterfs -->
+        <!-- 
         <dependency>
             <groupId>org.netbeans.modules</groupId>
             <artifactId>org-netbeans-modules-masterfs</artifactId>
             <version>RELEASE82</version>
         </dependency>
+        https://mvnrepository.com/artifact/org.netbeans.modules/org-netbeans-modules-masterfs -->
 
         <!--
         <dependency>
@@ -41,13 +49,6 @@
         </dependency>
         -->
         
-        <!-- https://mvnrepository.com/artifact/commons-lang/commons-lang -->
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
-        </dependency>
-
         
         <!-- https://mvnrepository.com/artifact/net.sourceforge/javaml -->
         <dependency>
@@ -92,6 +93,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
