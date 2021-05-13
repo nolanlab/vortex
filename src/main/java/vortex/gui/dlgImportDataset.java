@@ -10,6 +10,7 @@ import sandbox.dataIO.ImportConfigObject;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
+import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -710,7 +711,7 @@ public class dlgImportDataset extends GlassDialog {
                 txtDatasetName.setText(f.getName().substring(0, f.getName().length() - 4));
             }
             try {
-                DatasetStub stub = (f.getName().toLowerCase().endsWith(".fcs")) ? DatasetStub.createFromFCS(f) : DatasetStub.createFromTXT(f);
+                DatasetStub stub = (f.getName().toLowerCase().endsWith(".fcs")) ? DatasetStub.createFromFCS(f) : new vortex.util.DatasetStubTxtFJ(f);
                 for (String s : stub.getShortColumnNames()) {
                     if (hm.get(s) == null) {
                         hm.put(s, new Integer(0));
@@ -888,8 +889,32 @@ public class dlgImportDataset extends GlassDialog {
             }
 
         } catch (UnsupportedFlavorException | IOException e) {
-            logger.print(e);
+           try {
+            String fp = (String) getToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
+            
+            
+            String [] lines = fp.split("\n");
+            
+            if(lines.length!=tab.getRowCount()+1){
+                JOptionPane.showMessageDialog(null, "invalid length of the pasted text ("+lines.length + "), should be " + (tab.getRowCount()+1));
+                return;
+            }
+            
+            for (int i = 1; i < lines.length; i++) {
+                String line = lines[i];
+               
+                int val = Integer.parseInt(line.split("\t")[1]);
+               
+                tab.setValueAt(Math.min(val,2), i-1, 1);
+            }
+            
+
+        } catch (UnsupportedFlavorException | IOException ex) {
+            logger.showException(ex);
         }
+        }
+        
+        
 
     }//GEN-LAST:event_pmiPasteActionPerformed
 

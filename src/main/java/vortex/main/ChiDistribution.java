@@ -5,13 +5,13 @@
 package vortex.main;
 
 import cern.jet.stat.Gamma;
-import umontreal.iro.lecuyer.probdist.Distribution;
+import umontreal.ssj.probdist.ContinuousDistribution;
 
 /**
  *
  * @author Nikolay
  */
-public class ChiDistribution extends umontreal.iro.lecuyer.probdist.ContinuousDistribution {
+public class ChiDistribution extends ContinuousDistribution {
 
     double Cst;
     double f;

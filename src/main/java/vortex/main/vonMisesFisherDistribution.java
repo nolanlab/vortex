@@ -10,10 +10,8 @@ package vortex.main;
 
 import sandbox.clustering.MahalonobisSpace;
 import cern.jet.stat.Gamma;
-import java.sql.*;
 import java.util.Arrays;
-import umontreal.iro.lecuyer.probdist.ContinuousDistribution;
-import vortex.util.ConnectionManager;
+import umontreal.ssj.probdist.ContinuousDistribution;
 import util.MatrixOp;
 import util.logger;
 

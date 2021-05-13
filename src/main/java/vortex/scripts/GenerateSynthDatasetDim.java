@@ -9,14 +9,7 @@ import cern.colt.matrix.impl.DenseDoubleMatrix2D;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
-import umontreal.iro.lecuyer.probdist.StudentDist;
-import umontreal.iro.lecuyer.randvar.NormalGen;
-import umontreal.iro.lecuyer.randvar.StudentGen;
-import umontreal.iro.lecuyer.randvarmulti.MultinormalCholeskyGen;
-import umontreal.iro.lecuyer.randvarmulti.RandomMultivariateGen;
-import umontreal.iro.lecuyer.rng.GenF2w32;
-import umontreal.iro.lecuyer.rng.MRG31k3p;
-import umontreal.iro.lecuyer.rng.MRG32k3a;
+
 import sandbox.clustering.AngularDistance;
 import vortex.clustering.XShiftClustering;
 import sandbox.clustering.Cluster;
@@ -24,6 +17,13 @@ import sandbox.clustering.ClusterMember;
 import sandbox.clustering.ClusterSet;
 import sandbox.clustering.Datapoint;
 import sandbox.clustering.Dataset;
+import umontreal.ssj.probdist.StudentDist;
+import umontreal.ssj.randvar.NormalGen;
+import umontreal.ssj.randvar.StudentGen;
+import umontreal.ssj.randvarmulti.MultinormalCholeskyGen;
+import umontreal.ssj.randvarmulti.RandomMultivariateGen;
+import umontreal.ssj.rng.GenF2w32;
+import umontreal.ssj.rng.MRG32k3a;
 import util.logger;
 
 /**

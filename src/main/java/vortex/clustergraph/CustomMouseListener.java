@@ -27,6 +27,8 @@ public class CustomMouseListener implements PreviewMouseListener {
 
     @Override
     public void mouseClicked(PreviewMouseEvent event, PreviewProperties properties, Workspace workspace) {
+        
+        System.out.println("MouseClicked: " + event.toString());
         if (previewController == null) {
             previewController = Lookup.getDefault().lookup(PreviewController.class);
         }
@@ -79,7 +81,12 @@ public class CustomMouseListener implements PreviewMouseListener {
         float xdiff = node.x() - event.x;
         float ydiff = -node.y() - event.y;//Note that y axis is inverse for node coordinates
         float radius = node.size();
+        
+       double distSq =  xdiff * xdiff + ydiff * ydiff;
+       double radiusSq = radius * radius;
+              
+        System.out.println("DistSq: "+ distSq + ", radiusSq = " + radiusSq);
 
-        return xdiff * xdiff + ydiff * ydiff < radius * radius;
+        return distSq < radiusSq;
     }
 }

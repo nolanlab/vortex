@@ -11,7 +11,6 @@ import sandbox.clustering.ClusterSet;
 import java.awt.Color;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -60,8 +59,9 @@ public class PanProfilePlot extends javax.swing.JPanel implements PropertyChange
     /**
      * Creates new form panProfilePlot
      */
-    public PanProfilePlot(ClusterSet cs,boolean legend) {
+    public PanProfilePlot(ClusterSet cs, boolean legend) {
         initComponents();
+      
 
         this.cs = cs;
 
@@ -132,7 +132,7 @@ public class PanProfilePlot extends javax.swing.JPanel implements PropertyChange
 
     public void addClusters(Cluster[] cl) {
         for (Cluster c : cl) {
-            System.out.println("Adding cluster: " + c.toString());
+            //System.out.println("Adding cluster to line plot: " + c.toString());
             //c.addPropertyChangeListener(this);
             if (c == null) {
                 return;
@@ -142,14 +142,16 @@ public class PanProfilePlot extends javax.swing.JPanel implements PropertyChange
                 clusters = new ArrayList<>();
             }
             clusters.add(c);
+            
+          
 
-            for (int i = 0; i < cs.getDataset().getFeatureNames().length; i++) {
+            for (int i = 0; i < Math.min(cs.getDataset().getFeatureNames().length,100); i++) {
                 double[] avgVec = c.getMode().getVector();
                 graphDS.addValue(avgVec[i], c, i + 1 + " " + cs.getDataset().getFeatureNames()[i]);
             }
 
             if (cs.getDataset().getSideVarNames() != null) {
-                for (int i = 0; i < c.getMode().getSideVector().length; i++) {
+                for (int i = 0; i < Math.min(c.getMode().getSideVector().length,100); i++) {
                     double[] avgVec = c.getMode().getSideVector();
                     graphDS.addValue(avgVec[i], c, (cs.getDataset().getNumDimensions() + i + 1) + " " + cs.getDataset().getSideVarNames()[i]);
                 }

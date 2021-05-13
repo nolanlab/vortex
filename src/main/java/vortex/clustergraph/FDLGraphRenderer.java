@@ -224,7 +224,7 @@ public class FDLGraphRenderer extends javax.swing.JPanel {
         if (!simpleRendering && showEdges) {
             g2.setStroke(new BasicStroke(0.5f));
             g2.setPaint(new Color(100, 100, 100, 20));
-            System.out.println("Painting edges");
+            //System.out.println("Painting edges");
             for (Node n : nodes) {
                 if (!graph.contains(n)) {
                     continue;
@@ -246,11 +246,13 @@ public class FDLGraphRenderer extends javax.swing.JPanel {
             }
         }
 
+       
         for (Node n : nodes) {
             //Cluster c = cn[((Integer) n.getAttribute("clusterNode"))].cluster;
-            if (!graph.contains(n)) {
-                continue;
-            }
+            Cluster c = cn[((Integer) n.getAttribute("clusterNode"))].cluster;
+                if (c.isSelected() || !graph.contains(n)) {
+                    continue;
+                }
             int x = (int) ((n.x() - minX) * scaleX);
             int y = (int) ((n.y() - minY) * scaleY);
 

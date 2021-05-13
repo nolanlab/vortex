@@ -6,11 +6,11 @@ package vortex.util;
 
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
-import umontreal.iro.lecuyer.util.DMatrix;
 import vortex.mahalonobis.CovarianceMatrix;
 import sandbox.clustering.Datapoint;
 import java.util.Arrays;
 import java.util.Comparator;
+import umontreal.ssj.util.DMatrix;
 import util.MatrixOp;
 import util.logger;
 
@@ -21,6 +21,9 @@ import util.logger;
 public class ProfilePCA {
 
     public static DenseDoubleMatrix1D[] getPrincipalComponents(Datapoint[] datapoints, boolean unityLen) {
+        
+        final int maxVarLen = 100;
+        
         double[][] data = new double[datapoints.length][datapoints[0].getVector().length];
         /*try {
          MahalonobisSpace ms = new MahalonobisSpace(new NDataset("null", datapoints, new String[datapoints[0].getVector().length]));

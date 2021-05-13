@@ -11,24 +11,21 @@ import sandbox.clustering.Dataset;
 import sandbox.clustering.ClusterMember;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
-import umontreal.iro.lecuyer.probdist.StudentDist;
-import umontreal.iro.lecuyer.probdistmulti.MultiNormalDist;
-import umontreal.iro.lecuyer.randvar.NormalGen;
-import umontreal.iro.lecuyer.randvar.StudentGen;
-import umontreal.iro.lecuyer.randvarmulti.MultinormalPCAGen;
-import umontreal.iro.lecuyer.randvarmulti.RandomMultivariateGen;
-import umontreal.iro.lecuyer.rng.MRG31k3p;
-import umontreal.iro.lecuyer.rng.MRG32k3a;
-import util.LinePlusExponent;
+import umontreal.ssj.probdist.StudentDist;
+import umontreal.ssj.randvar.NormalGen;
+import umontreal.ssj.randvar.StudentGen;
+import umontreal.ssj.randvarmulti.RandomMultivariateGen;
+import umontreal.ssj.rng.MRG32k3a;
 import util.MatrixOp;
 import util.logger;
-import vortex.clustering.XShiftClustering;
 import vortex.util.Config;
 import vortex.util.ConnectionManager;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Random;
+import umontreal.ssj.probdistmulti.MultiNormalDist;
+import umontreal.ssj.randvarmulti.MultinormalPCAGen;
+import umontreal.ssj.rng.MRG31k3p;
 
 /**
  *
@@ -96,7 +93,8 @@ public class GenerateSynthDataset_SCONE {
             RandomMultivariateGen[] gen = new RandomMultivariateGen[SIZES.length];
             MultiNormalDist[] dist = new MultiNormalDist[SIZES.length];
 
-            i: for (int i = 0; i < SIZES.length; i++) {
+            i:
+            for (int i = 0; i < SIZES.length; i++) {
                 mu[i] = new DenseDoubleMatrix1D(dim);
                 sigma[i] = new DenseDoubleMatrix2D(dim, dim);
 
@@ -197,8 +195,6 @@ public class GenerateSynthDataset_SCONE {
 
             Dataset ds = new Dataset("Synth_Norm+Student_10comp_50dim_carryover=0.9_SCONE", dp.toArray(new Datapoint[dp.size()]), paramNames, new String[]{"Density", "ComponentID"});
 
-
-
             ConnectionManager.setDatabaseHost(Config.getDefaultDatabaseHost());//new ConnectionManager.get(DatabaseHost.HOST_HSQLDB, "D:\\hsqldb\\greg", "local file", "sa", ""));
             ConnectionManager.getStorageEngine().saveDataset(ds, true);
             ConnectionManager.getStorageEngine().shutdown();
@@ -241,7 +237,7 @@ public class GenerateSynthDataset_SCONE {
             logger.print("Optimal K =" + elboX);
             z++;
             //logger.print(sumSizes+"\t"+(Calendar.getInstance().getTimeInMillis()-millis));
-            */
+             */
         }
 
         //

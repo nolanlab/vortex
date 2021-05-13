@@ -629,8 +629,19 @@ public class ClusterSetBrowser extends javax.swing.JPanel implements ClusteringR
 
         if (rbDivisive.isSelected()) {
             try {
-                Cluster[] c = getSelectedClusters();
-                ClusterTreeNode ctn = new ClusterPhylogeny().getDivisiveMarkerTree(c);
+                Cluster[] clusters = getSelectedClusters();
+                
+            String [] options = new String [] {"Feature (blue)", "Functional (yellow)"};
+            
+            boolean useSideVariables = options[1].equals(JOptionPane.showInputDialog(null, "Which column set to use?", "Choose Features (colums)", JOptionPane.QUESTION_MESSAGE, null, options, options[0]));
+
+            String [] options1 = new String [] {"Verbose", "Simple (+/-)"};
+            
+            boolean simpleMode = options1[1].equals(JOptionPane.showInputDialog(null, "Choose node labelling mode:", "Option", JOptionPane.QUESTION_MESSAGE, null, options1, options1[0]));
+
+            
+            ClusterTreeNode ctn = (new ClusterPhylogeny()).getDivisiveMarkerTree(clusters, useSideVariables, simpleMode);
+
                 Datapoint[] d = new Datapoint[ctn.getUserObject().length];
                 for (int i = 0; i < d.length; i++) {
                     d[i] = new Datapoint(ctn.getUserObject()[i].getFullName(), ctn.getUserObject()[i].getVector(), ctn.getUserObject()[i].getSideVector(), i);

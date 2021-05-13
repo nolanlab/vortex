@@ -17,14 +17,14 @@
  */
 package vortex.util;
 
-import umontreal.iro.lecuyer.randvar.ChiSquareGen;
-import umontreal.iro.lecuyer.randvar.NormalACRGen;
-import umontreal.iro.lecuyer.randvar.StudentNoncentralGen;
-import umontreal.iro.lecuyer.randvarmulti.RandomMultivariateGen;
-import umontreal.iro.lecuyer.rng.GenF2w32;
-import umontreal.iro.lecuyer.rng.LFSR113;
-import umontreal.iro.lecuyer.rng.MRG31k3p;
-import umontreal.iro.lecuyer.rng.MRG32k3a;
+import umontreal.ssj.randvar.ChiSquareGen;
+import umontreal.ssj.randvar.NormalACRGen;
+import umontreal.ssj.randvar.StudentNoncentralGen;
+import umontreal.ssj.randvarmulti.RandomMultivariateGen;
+import umontreal.ssj.rng.MRG31k3p;
+
+
+
 
 /**
  *

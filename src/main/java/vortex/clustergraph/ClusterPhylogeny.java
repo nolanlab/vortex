@@ -26,7 +26,7 @@ import vortex.clustering.HierarchicalCentroid;
  */
 public class ClusterPhylogeny {
 
-    public ClusterTreeNode getDivisiveMarkerTree(Cluster[] clus) throws SQLException {
+    public ClusterTreeNode getDivisiveMarkerTree(Cluster[] clus, boolean useSideVariables, boolean simpleMode) throws SQLException {
         ArrayList<ClusterDatapoint> filteredClusters = new ArrayList<>();
         for (Cluster cl : clus) {
             // if (true|| cl.getCaption().startsWith("Hu")) {
@@ -35,15 +35,15 @@ public class ClusterPhylogeny {
         }
 
         ClusterDatapoint[] clDP = filteredClusters.toArray(new ClusterDatapoint[filteredClusters.size()]);
-        double[] avgArrayList = getAvgVec(clDP);
+        double[] avgArrayList = getAvgVec(clDP, useSideVariables);
         double[] sdVec = new double[avgArrayList.length];
         int cnt = 0;
 
         for (ClusterDatapoint c : clDP) {
-            double[] cVec = c.getVector();
+            double[] cVec = useSideVariables?c.getSideVector():c.getVector();
             for (ClusterMember cm : c.getCluster().getClusterMembers()) {
                 cnt++;
-                double[] vec = cm.getDatapoint().getVector();
+                double[] vec = useSideVariables?cm.getDatapoint().getSideVector():cm.getDatapoint().getVector();
                 for (int i = 0; i < sdVec.length; i++) {
                     double diff = vec[i] - cVec[i];
                     sdVec[i] += diff * diff;
@@ -59,10 +59,9 @@ public class ClusterPhylogeny {
 
         ClusterTreeNode root = new ClusterTreeNode(clDP, "Root", clDP.length);
 
-        String[] colNames = clDP[0].c.getClusterSet().getDataset().getFeatureNames();
+        String[] colNames = useSideVariables?clDP[0].c.getClusterSet().getDataset().getSideVarNames():clDP[0].c.getClusterSet().getDataset().getFeatureNames();
         for (int i = 0; i < colNames.length; i++) {
             colNames[i]=colNames[i].replaceAll("\\:.*", "");
-            
         }
 
         ArrayList<ClusterTreeNode> prevLevel = new ArrayList<>();
@@ -72,7 +71,7 @@ public class ClusterPhylogeny {
         do {
             ArrayList<ClusterTreeNode> nextLevel = new ArrayList<>();
             for (ClusterTreeNode node : prevLevel) {
-                ClusterTreeNode[] children = split(node, colNames, sdVec);
+                ClusterTreeNode[] children = split(node, colNames, sdVec, useSideVariables, simpleMode);
                 for (ClusterTreeNode ch : children) {
                     node.add(ch);
                     if (ch.getUserObject().length > 1) {
@@ -130,12 +129,17 @@ public class ClusterPhylogeny {
         return root;
     }
 
-    ClusterTreeNode[] split(ClusterTreeNode node, String[] colNames, double[] sdVec) {
+    ClusterTreeNode[] split(ClusterTreeNode node, String[] colNames, double[] sdVec, boolean useSideVectors, boolean simpleMode) {
         ClusterDatapoint[] c = node.getUserObject();
         double dist = ((ClusterTreeNode) node.getRoot()).getUserObject().length - node.getLevel();
+        
+       
 
         if (c.length == 2) {
-            double[] diff = MatrixOp.diff(c[0].getVector(), c[1].getVector());
+            double[] vec1 = useSideVectors?c[0].getSideVector():c[0].getVector();
+            double[] vec2 = useSideVectors?c[1].getSideVector():c[1].getVector();
+            
+            double[] diff = MatrixOp.diff(vec1, vec2);
             int maxCol = 0;
             double maxDiff = 0;
             String breakpoint = "";
@@ -145,12 +149,12 @@ public class ClusterPhylogeny {
                 if (diff[i] > maxDiff) {
                     maxDiff = diff[i];
                     maxCol = i;
-                    breakpoint = String.format("%3.2f", (c[0].getVector()[i] + c[1].getVector()[i]) / 2);
+                    breakpoint = String.format("%3.2f", (vec1[i] + vec2[i]) / 2);
                 }
             }
             logger.print("splitting " + String.valueOf(node.getID()) + " " + node.getLabel() + "(" + node.getUserObject().length + ") on " + maxCol + "(1,1)");
-            String lbl1 = colNames[maxCol].trim() + (c[0].getVector()[maxCol] > c[1].getVector()[maxCol] ? "\n>" + breakpoint : "\n<" + breakpoint);
-            String lbl2 = colNames[maxCol].trim() + (c[0].getVector()[maxCol] > c[1].getVector()[maxCol] ? "\n<" + breakpoint : "\n>" + breakpoint);
+            String lbl1 = colNames[maxCol].trim() + (simpleMode? (vec1[maxCol] > vec2[maxCol] ? "⁺" : "⁻") : (vec1[maxCol] > vec2[maxCol] ? "\n>" + breakpoint : "\n<" + breakpoint)) + c[0].getCluster().getComment();
+            String lbl2 = colNames[maxCol].trim() + (simpleMode? (vec1[maxCol] > vec2[maxCol] ? "⁻" : "⁺") : (vec1[maxCol] > vec2[maxCol] ? "\n<" + breakpoint : "\n>" + breakpoint)) + c[1].getCluster().getComment();
             return new ClusterTreeNode[]{new ClusterTreeNode(new ClusterDatapoint[]{c[0]}, true, lbl1, dist), new ClusterTreeNode(new ClusterDatapoint[]{c[1]}, true, lbl2, dist)};
         }
         int bestCol = -1;
@@ -160,12 +164,12 @@ public class ClusterPhylogeny {
         
         for (int i = 0; i < colNames.length; i++) {
             for (int j = 0; j < c.length; j++) {
-                double divVal = c[j].getVector()[i];
+                double divVal = (useSideVectors?c[j].getSideVector():c[j].getVector())[i];
 
-                ClusterDatapoint[][] div = divideClusters(c, i, divVal);
+                ClusterDatapoint[][] div = divideClusters(c, i, divVal, useSideVectors);
 
                 if (div != null) {
-                    double sumSq = getSumAngDist(div[0], sdVec) + getSumAngDist(div[1], sdVec);
+                    double sumSq = getSumAngDist(div[0], sdVec, useSideVectors) + getSumAngDist(div[1], sdVec, useSideVectors);
                     //(getSumSq(div[0], sdVec, i) + getSumSq(div[1], sdVec, i))/getSumSq(c,sdVec,i);
                     if (sumSq < minSumSq) {
                         bestDivVal = divVal;
@@ -175,7 +179,10 @@ public class ClusterPhylogeny {
                         double minSepRange = Double.MAX_VALUE;
                         for (int k = 0; k < div[0].length; k++) {
                             for (int l = 0; l < div[1].length; l++) {
-                                double sepR =  Math.abs(div[0][k].getVector()[i] - div[1][l].getVector()[i]) / sdVec[i];
+                                double [] vec1 = useSideVectors?div[0][k].getSideVector():div[0][k].getVector();
+                                double [] vec2 = useSideVectors?div[1][l].getSideVector():div[1][l].getVector();
+                                
+                                double sepR =  Math.abs(vec1[i] - vec2[i]) / sdVec[i];
                                 if(sepR < minSepRange){
                                     minSepRange = sepR;
                                 }
@@ -186,7 +193,10 @@ public class ClusterPhylogeny {
                         double minSepRange = Double.MAX_VALUE;
                         for (int k = 0; k < div[0].length; k++) {
                             for (int l = 0; l < div[1].length; l++) {
-                                double sepR =  Math.abs(div[0][k].getVector()[i] - div[1][l].getVector()[i]) / sdVec[i];
+                                double [] vec1 = useSideVectors?div[0][k].getSideVector():div[0][k].getVector();
+                                double [] vec2 = useSideVectors?div[1][l].getSideVector():div[1][l].getVector();
+                                
+                                double sepR =  Math.abs(vec1[i] - vec2[i]) / sdVec[i];
                                 if(sepR < minSepRange){
                                     minSepRange = sepR;
                                 }
@@ -206,19 +216,19 @@ public class ClusterPhylogeny {
         logger.print("bestCol " + bestCol);
 
         //if(bestCol==-1)
-        ClusterDatapoint[][] sep = divideClusters(c, bestCol, bestDivVal);
+        ClusterDatapoint[][] sep = divideClusters(c, bestCol, bestDivVal, useSideVectors);
 
-        double avg1 = getAvgVec(sep[0])[bestCol];
-        double avg2 = getAvgVec(sep[1])[bestCol];
+        double avg1 = getAvgVec(sep[0], useSideVectors)[bestCol];
+        double avg2 = getAvgVec(sep[1], useSideVectors)[bestCol];
         
         double [] val1 = new double[sep[0].length];
         double [] val2 = new double[sep[1].length];
         for (int i = 0; i < val1.length; i++) {
-             val1[i]= sep[0][i].c.getMode().getVector()[bestCol];
+             val1[i]= useSideVectors?sep[0][i].c.getMode().getSideVector()[bestCol]:sep[0][i].c.getMode().getVector()[bestCol];
         }
         
         for (int i = 0; i < val2.length; i++) {
-             val2[i]= sep[1][i].c.getMode().getVector()[bestCol];
+             val2[i]= useSideVectors?sep[1][i].c.getMode().getSideVector()[bestCol]:sep[1][i].c.getMode().getVector()[bestCol];
         }
         
         Arrays.sort(val1);
@@ -226,18 +236,18 @@ public class ClusterPhylogeny {
         
         String breakpoint = String.format("%3.2f", avg1 > avg2 ?  ((val1[val1.length-1]+val2[0])/2.0): ((val2[val2.length-1]+val1[0])/2.0));
         
-        String lbl1 = colNames[bestCol].trim() + (avg1 > avg2 ? ">" + breakpoint : "<" + breakpoint);
-        String lbl2 = colNames[bestCol].trim() + (avg1 > avg2 ? "<" + breakpoint : ">" + breakpoint);
+        String lbl1 = colNames[bestCol].trim() + (simpleMode? (avg1 > avg2 ? "⁺" : "⁻"): (avg1 > avg2 ? ">" + breakpoint : "<" + breakpoint));
+        String lbl2 = colNames[bestCol].trim() + (simpleMode? (avg1 > avg2 ? "⁻":  "⁺") :(avg1 > avg2 ? "<" + breakpoint : ">" + breakpoint));
         logger.print("splitting " + String.valueOf(node.getID()) + " " + node.getLabel() + "(" + node.getUserObject().length + ") on " + bestCol + "(" + sep[0].length + "," + sep[1].length + ")");
         return new ClusterTreeNode[]{new ClusterTreeNode(sep[0], true, lbl1, dist), new ClusterTreeNode(sep[1], true, lbl2, dist)};
     }
 
-    ClusterDatapoint[][] divideClusters(ClusterDatapoint[] c, int col, double divVal) {
+    ClusterDatapoint[][] divideClusters(ClusterDatapoint[] c, int col, double divVal, boolean useSideVectors) {
         ArrayList<ClusterDatapoint> g1 = new ArrayList<>();
         ArrayList<ClusterDatapoint> g2 = new ArrayList<>();
 
         for (ClusterDatapoint cl : c) {
-            if (cl.getVector()[col] < divVal) {
+            if ((useSideVectors?cl.getSideVector():cl.getVector())[col] < divVal) {
                 g1.add(cl);
             } else {
                 g2.add(cl);
@@ -249,24 +259,24 @@ public class ClusterPhylogeny {
         return new ClusterDatapoint[][]{g1.toArray(new ClusterDatapoint[g1.size()]), g2.toArray(new ClusterDatapoint[g2.size()])};
     }
 
-    double[] getAvgVec(ClusterDatapoint[] cl) {
+    double[] getAvgVec(ClusterDatapoint[] cl, boolean useSideVectors) {
         if (cl.length == 0) {
             return null;
         }
-        double[] avgArrayList = new double[cl[0].getVector().length];
+        double[] avgArrayList = new double[(useSideVectors?cl[0].getSideVector():cl[0].getVector()).length];
 
         for (ClusterDatapoint c : cl) {
-            avgArrayList = MatrixOp.sum(avgArrayList, c.getVector());
+            avgArrayList = MatrixOp.sum(avgArrayList, (useSideVectors?c.getSideVector():c.getVector()));
         }
         MatrixOp.mult(avgArrayList, 1.0 / cl.length);
         return avgArrayList;
     }
 
-    double getSumSq(ClusterDatapoint[] cl, double[] sdVec, int leaveOutIdx) {
-        double[] avgArrayList = getAvgVec(cl);
+    double getSumSq(ClusterDatapoint[] cl, double[] sdVec, int leaveOutIdx, boolean useSideVectors) {
+        double[] avgArrayList = getAvgVec(cl, useSideVectors);
         double sumSq = 0;
         for (ClusterDatapoint c : cl) {
-            double[] diff = MatrixOp.diff(c.getVector(), avgArrayList);
+            double[] diff = MatrixOp.diff(useSideVectors?c.getSideVector():c.getVector(), avgArrayList);
             for (int i = 0; i < diff.length; i++) {
                 if (i != leaveOutIdx) {
                     diff[i] = 0;
@@ -281,14 +291,14 @@ public class ClusterPhylogeny {
         return sumSq;
     }
 
-    double getSumAngDist(ClusterDatapoint[] cl, double[] sdVec) {
-        double[] avgArrayList = getAvgVec(cl);
+    double getSumAngDist(ClusterDatapoint[] cl, double[] sdVec , boolean useSideVectors) {
+        double[] avgArrayList = getAvgVec(cl, useSideVectors);
         for (int i = 0; i < avgArrayList.length; i++) {
             avgArrayList[i] /= sdVec[i];
         }
         double sumDist = 0;
         for (ClusterDatapoint c : cl) {
-            double[] vec = MatrixOp.copy(c.getVector());
+            double[] vec = MatrixOp.copy(useSideVectors?c.getSideVector():c.getVector());
             for (int i = 0; i < vec.length; i++) {
                 vec[i] /= sdVec[i];
             }
@@ -297,19 +307,19 @@ public class ClusterPhylogeny {
         return sumDist;
     }
 
-    double getVolume(ClusterDatapoint[] cl, double[] sdVec) {
+    double getVolume(ClusterDatapoint[] cl, double[] sdVec, boolean useSideVectors) {
         if (cl.length < 2) {
             return 0;
         }
-        double[] minArrayList = getAvgVec(cl);
-        double[] maxArrayList = getAvgVec(cl);
+        double[] minArrayList = getAvgVec(cl, useSideVectors);
+        double[] maxArrayList = getAvgVec(cl, useSideVectors);
         for (int i = 0; i < minArrayList.length; i++) {
             minArrayList[i] /= sdVec[i];
             maxArrayList[i] /= sdVec[i];
         }
 
         for (ClusterDatapoint c : cl) {
-            double[] vec = MatrixOp.copy(c.getVector());
+            double[] vec = MatrixOp.copy(useSideVectors?c.getSideVector():c.getVector());
             for (int i = 0; i < vec.length; i++) {
                 vec[i] /= sdVec[i];
                 maxArrayList[i] = Math.max(vec[i], maxArrayList[i]);
@@ -321,24 +331,6 @@ public class ClusterPhylogeny {
             vol *= Math.abs(maxArrayList[i] - minArrayList[i]);
         }
         return vol;
-    }
-
-    private int[] findClosestPair(List<ClusterTreeNode> nodes) throws SQLException {
-
-        double maxAvgSim = -Double.MAX_VALUE;
-        int[] closestPairIdx = new int[2];
-
-        for (int i = 0; i < nodes.size(); i++) {
-            for (int j = i + 1; j < nodes.size(); j++) {
-                double sim = MatrixOp.getEuclideanCosine(getAvgVec(nodes.get(i).getUserObject()), getAvgVec(nodes.get(j).getUserObject()));
-                if (sim > maxAvgSim) {
-                    maxAvgSim = sim;
-                    closestPairIdx[0] = i;
-                    closestPairIdx[1] = j;
-                }
-            }
-        }
-        return closestPairIdx;
     }
 
     private static class NodeTuple {
@@ -378,79 +370,6 @@ public class ClusterPhylogeny {
         }
 
     }
-
-    private HashMap<NodeTuple, Double> hmSimilarity;
-
-    private double getSimilarity(ClusterTreeNode node1, ClusterTreeNode node2) throws SQLException {
-        NodeTuple tuple = new NodeTuple(node1, node2);
-        if (hmSimilarity == null) {
-            hmSimilarity = new HashMap<>();
-        }
-        if (hmSimilarity.get(tuple) != null) {
-            //  logger.print("cache hit");
-            return hmSimilarity.get(tuple);
-        }
-        logger.print();
-        //logger.print("cache miss");
-
-        //logger.print(tuple + " hash: "+ tuple.hashCode());
-        final int NUM_SAMPLES = 10000;
-        ClusterMember[] vec1 = node1.getClusterMembers();
-        ClusterMember[] vec2 = node2.getClusterMembers();
-
-        double[] avg1 = new double[vec1[0].getDatapoint().getVector().length];
-        double[] avg2 = new double[vec2[0].getDatapoint().getVector().length];
-        double avgSim = 0;
-        for (int i = 0; i < NUM_SAMPLES; i++) {
-            int idx1 = (int) (Math.random() * vec1.length);
-            int idx2 = (int) (Math.random() * vec2.length);
-            avg1 = MatrixOp.sum(avg1, vec1[idx1].getDatapoint().getVector());
-            avg2 = MatrixOp.sum(avg2, vec2[idx2].getDatapoint().getVector());
-            avgSim += MatrixOp.getEuclideanCosine(vec1[idx1].getDatapoint().getVector(), vec2[idx2].getDatapoint().getVector());
-        }
-
-        MatrixOp.mult(avg1, 1.0 / NUM_SAMPLES);
-        MatrixOp.mult(avg2, 1.0 / NUM_SAMPLES);
-
-        if (true) {
-            return avgSim / NUM_SAMPLES;// MatrixOp.getEuclideanCosine(avg1, avg2);
-        }
-
-        double[] stdev1 = new double[vec1[0].getDatapoint().getVector().length];
-        double[] stdev2 = new double[vec2[0].getDatapoint().getVector().length];
-
-        for (int i = 0; i < NUM_SAMPLES; i++) {
-            int idx1 = (int) (Math.random() * vec1.length);
-            int idx2 = (int) (Math.random() * vec2.length);
-            for (int j = 0; j < stdev1.length; j++) {
-                stdev1[j] += Math.pow(vec1[idx1].getDatapoint().getVector()[j] - avg1[j], 2);
-                stdev2[j] += Math.pow(vec2[idx2].getDatapoint().getVector()[j] - avg2[j], 2);
-            }
-        }
-        MatrixOp.mult(stdev1, 1.0 / NUM_SAMPLES);
-        MatrixOp.mult(stdev2, 1.0 / NUM_SAMPLES);
-
-        for (int j = 0; j < stdev1.length; j++) {
-            stdev1[j] = Math.sqrt(stdev1[j]);
-            stdev2[j] = Math.sqrt(stdev2[j]);
-        }
-
-        double numSimilarFeatures = 0;
-
-        for (int i = 0; i < stdev2.length; i++) {
-            double avgStdDev = (stdev1[i] + stdev2[i]) / 2.0;
-            if (Math.abs(avg1[i] - avg2[i]) / avgStdDev < 1.96) {
-                numSimilarFeatures++;
-            }
-        }
-
-        hmSimilarity.put(tuple, numSimilarFeatures);
-        //logger.print("getting val: " + hmSimilarity.get(tuple));
-        return numSimilarFeatures;
-    }
-
-    private static HashMap<ClusterTreeNode, double[][]> hmArrayListList;
-
     
 
     public static class ClusterDatapoint extends Datapoint {
@@ -467,14 +386,6 @@ public class ClusterPhylogeny {
             return c;
         }
 
-    }
-
-    
-
-    private static ClusterDatapoint[] concatenate(ClusterDatapoint[] arr1, ClusterDatapoint[] arr2) {
-        ClusterDatapoint[] arr = Arrays.copyOf(arr1, arr1.length + arr2.length);
-        System.arraycopy(arr2, 0, arr, arr1.length, arr2.length);
-        return arr;
     }
 
 }

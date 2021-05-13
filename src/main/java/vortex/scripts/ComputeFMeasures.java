@@ -62,6 +62,7 @@ public class ComputeFMeasures {
             ConnectionManager.setDatabaseHost(Config.getDefaultDatabaseHost());
 
         } while (ConnectionManager.getDatabaseHost() == null);
+        
         for (int currDS_idx = 0; currDS_idx < dsNames.length; currDS_idx++) {
             String dsName = dsNames[currDS_idx];
             Dataset ds = ConnectionManager.getStorageEngine().loadDataset(dsName);
@@ -111,10 +112,6 @@ public class ComputeFMeasures {
             }
 
             for (ClusterSet cs : css) {
-
-                if (cs.getID() < 1132) {
-                    continue;
-                }
 
                 double[][] adjMatrix = new double[terms.length][cs.getClusters().length];
 

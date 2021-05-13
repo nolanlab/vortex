@@ -173,9 +173,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Agglomerative"/>
           </Properties>
-          <BindingProperties>
-            <BindingProperty name="selected" source="panHPP" sourcePath="${enabled}" target="rbAggl" targetPath="selected" updateStrategy="0" immediately="false"/>
-          </BindingProperties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbAgglActionPerformed"/>
           </Events>

@@ -54,7 +54,6 @@ import org.gephi.preview.types.DependantOriginalColor;
 import org.gephi.preview.types.EdgeColor;
 import org.gephi.project.api.ProjectController;
 import org.openide.util.Lookup;
-import umontreal.iro.lecuyer.probdist.NormalDist;
 import sandbox.annotations.Annotation;
 import cern.colt.matrix.DoubleMatrix2D;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
@@ -76,7 +75,6 @@ import java.util.Comparator;
 import javax.swing.JOptionPane;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.border.LineBorder;
 import javax.swing.event.ListSelectionEvent;
 import org.gephi.graph.api.Graph;
 import org.gephi.graph.api.UndirectedGraph;
@@ -85,6 +83,7 @@ import org.gephi.preview.api.G2DTarget;
 import org.gephi.project.api.Project;
 import org.gephi.project.api.Workspace;
 import org.gephi.statistics.plugin.ConnectedComponents;
+import umontreal.ssj.probdist.NormalDistQuick;
 import util.DefaultEntry;
 import util.IO;
 import util.MatrixOp;
@@ -142,8 +141,6 @@ public class frmGraph extends javax.swing.JFrame {
     public static frmGraph getInstance() {
         return Instance;
     }
-    
-    
 
     public frmGraph(Cluster[] clusters, String graphType) {
         initComponents();
@@ -394,12 +391,14 @@ public class frmGraph extends javax.swing.JFrame {
                         if (col == 0 && row < tabAnnTerms.getRowCount()) {
                             int val = (Integer) ((DefaultTableModel) tabAnnTerms.getModel()).getValueAt(row, col);
                             if (e.getButton() == MouseEvent.BUTTON1) {
+                                System.out.println("Button1 clicked");
                                 val++;
                                 if (val == groupOptionList.length) {
                                     val = 0;
                                 }
                             }
                             if (e.getButton() == MouseEvent.BUTTON3) {
+                                System.out.println("Button3 clicked");
                                 for (int j = 0; j < tabAnnTerms.getRowCount(); j++) {
                                     ((DefaultTableModel) tabAnnTerms.getModel()).setValueAt(groupOptionList.length - 1, j, col);
                                 }
@@ -703,8 +702,19 @@ public class frmGraph extends javax.swing.JFrame {
             graph = graphModel.getDirectedGraph();
 
             HashMap<ClusterTreeNode, Node> hmNodes = new HashMap<>();
+            
+           
+            
+            String [] options = new String [] {"Feature (blue)", "Functional (yellow)"};
+            
+            boolean useSideVariables = options[1].equals(JOptionPane.showInputDialog(null, "Which column set to use?", "Choose Features (colums)", JOptionPane.QUESTION_MESSAGE, null, options, options[0]));
 
-            ClusterTreeNode root = (new ClusterPhylogeny()).getDivisiveMarkerTree(clusters);
+            String [] options1 = new String [] {"Verbose", "Simple (+/-)"};
+            
+            boolean simpleMode = options1[1].equals(JOptionPane.showInputDialog(null, "Choose node labelling mode:", "Option", JOptionPane.QUESTION_MESSAGE, null, options1, options1[0]));
+
+            
+            ClusterTreeNode root = (new ClusterPhylogeny()).getDivisiveMarkerTree(clusters, useSideVariables, simpleMode);
 
             Enumeration<HierarchicalCentroid> enu = root.breadthFirstEnumeration();
 
@@ -721,7 +731,7 @@ public class frmGraph extends javax.swing.JFrame {
                     n0.setX((float) c.getMode().getVector()[0]);
                     n0.setY((float) c.getMode().getVector()[1]);
                     n0.setSize((float) Math.max(5, Math.pow(c.getAvgSize(), 0.33)));
-                    String label = cn.getLabel() + " | id" + c.getID() + (c.getComment().trim().length() > 0 ? (": " + c.getComment()) : "");
+                    String label = cn.getLabel(); // /* + " | id" + c.getID() */+ (c.getComment().trim().length() > 0 ? (": " + c.getComment()) : "");
                     n0.setLabel(label);//c.toString());
                     n0.setAttribute("hd-label", label);
                     n0.setAttribute("cluster", c.getID());
@@ -1559,7 +1569,8 @@ public class frmGraph extends javax.swing.JFrame {
                         double[] pValArrayList = new double[ann.getBaseDataset().getFeatureNamesCombined().length];
                         for (int i = 0; i < pValArrayList.length; i++) {
                             if (sErrArrayList[i] > 0) {
-                                NormalDist dist = new NormalDist(avgVecControl[i], sErrArrayList[i]);
+                                NormalDistQuick dist = new NormalDistQuick(avgVecControl[i], sErrArrayList[i]);
+                              
                                 pValArrayList[i] = Math.abs(dist.cdf(avgVec[i]) - 0.5) * 2;
                             } else {
                                 pValArrayList[i] = 0.5;

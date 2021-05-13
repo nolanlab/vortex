@@ -328,8 +328,7 @@ public class panScFDL extends javax.swing.JPanel implements PropertyChangeListen
         return Instance;
     }
     
-    
-
+   
     public panScFDL(Cluster[] clusters) {
         initComponents();
         
@@ -478,20 +477,30 @@ public class panScFDL extends javax.swing.JPanel implements PropertyChangeListen
             }
 
         }
-
-        logger.print("Num Datapoints: " + dp.size());
-
-        Collections.shuffle(alCN);
+        
+        
 
         final ClusterNode[] cn = Arrays.copyOf(alCN.toArray(new ClusterNode[alCN.size()]), alCN.size());
 
         graphRenderer = new FDLGraphRenderer(cn, FDLGraphRenderer.ColoringMode.CLUSTER, colorScale);
+        
+        if(abort)return;
+        
+        System.out.println("Num Datapoints: "+ dp.size());
+        Collections.shuffle(alCN);
 
         double[][] nodePOX = new double[dp.size()][2];
+        
+        if(ds.getFeatureNames().length<100){
         DenseDoubleMatrix1D[] ddm = ProfilePCA.getPrincipalComponents(dp.toArray(new Datapoint[dp.size()]), false);
 
         for (int i = 0; i < nodePOX.length; i++) {
             nodePOX[i] = new double[]{MatrixOp.mult(ddm[0].toArray(), dp.get(i).getUnityLengthVector()), MatrixOp.mult(ddm[1].toArray(), dp.get(i).getUnityLengthVector())};
+        }
+        }else{
+             for (int i = 0; i < nodePOX.length; i++) {
+            nodePOX[i] = new double[]{ dp.get(i).getUnityLengthVector()[0], dp.get(i).getUnityLengthVector()[1]};
+        }
         }
 
         double minX = nodePOX[0][0];
@@ -567,7 +576,8 @@ public class panScFDL extends javax.swing.JPanel implements PropertyChangeListen
         cmbAnnotations.setPreferredSize(new Dimension(100, 30));
         cmbAnnotations.setMinimumSize(new Dimension(100, 30));
 
-        buildGraph(KNN, cn, jp, fdlParamPane.getDM(), fdlParamPane.getRestrictionParam(), fdlParamPane.getRestrictionParamRange());
+        if(!abort) buildGraph(KNN, cn, jp, fdlParamPane.getDM(), fdlParamPane.getRestrictionParam(), fdlParamPane.getRestrictionParamRange());
+        
     }
 
     private void buildGraph(final int KNN, final ClusterNode[] cn, final JProgressBar jp, DistanceMeasure dm, final int paramLim, final double limRange) {
@@ -717,7 +727,7 @@ public class panScFDL extends javax.swing.JPanel implements PropertyChangeListen
 
                 int numEdges = Math.min(nn, sortedNodes[i].length);
 
-                System.err.println("dens: " + hmDens.get(nodes[i]) + " numEdges:" + numEdges);
+                //System.err.println("dens: " + hmDens.get(nodes[i]) + " numEdges:" + numEdges);
 
                 Edge e1 = null;
                 double dns = hmDens.get(nodes[i]);

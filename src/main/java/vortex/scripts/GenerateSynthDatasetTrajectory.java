@@ -12,14 +12,11 @@ import sandbox.clustering.Dataset;
 import sandbox.clustering.ClusterMember;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
-import umontreal.iro.lecuyer.probdist.StudentDist;
-import umontreal.iro.lecuyer.probdistmulti.MultiNormalDist;
-import umontreal.iro.lecuyer.randvar.NormalGen;
-import umontreal.iro.lecuyer.randvar.StudentGen;
-import umontreal.iro.lecuyer.randvarmulti.MultinormalPCAGen;
-import umontreal.iro.lecuyer.randvarmulti.RandomMultivariateGen;
-import umontreal.iro.lecuyer.rng.MRG31k3p;
-import umontreal.iro.lecuyer.rng.MRG32k3a;
+import umontreal.ssj.probdist.StudentDist;
+import umontreal.ssj.randvar.NormalGen;
+import umontreal.ssj.randvar.StudentGen;
+import umontreal.ssj.randvarmulti.RandomMultivariateGen;
+import umontreal.ssj.rng.MRG32k3a;
 import util.LinePlusExponent;
 import util.MatrixOp;
 import util.logger;
@@ -30,6 +27,9 @@ import vortex.util.ConnectionManager;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
+import umontreal.ssj.probdistmulti.MultiNormalDist;
+import umontreal.ssj.randvarmulti.MultinormalPCAGen;
+import umontreal.ssj.rng.MRG31k3p;
 
 /**
  *
@@ -95,7 +95,7 @@ public class GenerateSynthDatasetTrajectory {
             DenseDoubleMatrix1D[] mu = new DenseDoubleMatrix1D[SIZES.length];
             DenseDoubleMatrix2D[] sigma = new DenseDoubleMatrix2D[SIZES.length];
             RandomMultivariateGen[] gen = new RandomMultivariateGen[SIZES.length];
-            MultiNormalDist[] dist = new MultiNormalDist[SIZES.length];
+            MultiNormalDist [] dist = new MultiNormalDist[SIZES.length];
 
 
             i: for (int i = 0; i < SIZES.length; i++) {

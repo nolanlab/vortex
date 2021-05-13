@@ -21,18 +21,16 @@ import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix2D;
 import java.io.IOException;
 import java.sql.SQLException;
-import umontreal.iro.lecuyer.probdistmulti.MultiNormalDist;
-import umontreal.iro.lecuyer.randvar.NormalGen;
-import umontreal.iro.lecuyer.randvarmulti.MultinormalCholeskyGen;
-import umontreal.iro.lecuyer.randvarmulti.RandomMultivariateGen;
-import umontreal.iro.lecuyer.rng.MRG32k3a;
+import umontreal.ssj.randvar.NormalGen;
+import umontreal.ssj.randvarmulti.MultinormalCholeskyGen;
+import umontreal.ssj.randvarmulti.RandomMultivariateGen;
+import umontreal.ssj.rng.MRG32k3a;
 import sandbox.clustering.Datapoint;
 import sandbox.clustering.Dataset;
-import sandbox.clustering.EuclideanDistance;
+import umontreal.ssj.probdistmulti.MultiNormalDist;
 import vortex.util.Config;
 import vortex.util.ConnectionManager;
 import util.logger;
-import vortex.clustering.XShiftClustering;
 
 /**
  *

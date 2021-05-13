@@ -11,7 +11,7 @@ import cern.colt.matrix.linalg.Algebra;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import sandbox.clustering.Dataset;
-import umontreal.iro.lecuyer.probdistmulti.MultiNormalDist;
+import umontreal.ssj.probdistmulti.MultiNormalDist;
 import util.MatrixOp;
 import util.logger;
 

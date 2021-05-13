@@ -69,15 +69,10 @@ public class ClusterBrowserPane extends javax.swing.JPanel implements ClusterSet
 
     Thread clt = null;
     public void setClusterPlot(ClusterSet c) {
-
-
-
         PanProfilePlot pp = new PanProfilePlot(c, false);
-
         if(clt!=null){
             clt.interrupt();
         }
-
         clt = new Thread(
             new Runnable(){
                 @Override
@@ -87,15 +82,12 @@ public class ClusterBrowserPane extends javax.swing.JPanel implements ClusterSet
             }
             );
         clt.start();
-
         int idx = -1;
         for (int i = 0; i < tabPane.getTabCount(); i++) {
             if (tabPane.getComponentAt(i) instanceof PanProfilePlot) {
-
                 idx = i;
             }
         }
-
         ClusterTabComponent ctc = new ClusterTabComponent("Profile Plot CS" + c.getID());
         ctc.addCloseActionListener(new ActionListener() {
             @Override
@@ -117,13 +109,10 @@ public class ClusterBrowserPane extends javax.swing.JPanel implements ClusterSet
             tabPane.setSelectedIndex(tabPane.getComponentCount() - 1);
             tabPane.setTitleAt(tabPane.getComponentCount() - 1, "Profile Plot CS" + c.getID());
         }
-
         for (Cluster cl : c.getClusters()) {
             cl.addPropertyChangeListener(pp);
         }
-
         tabPane.setVisible(true);
-
     }
     /*
     public void addClusterPlot(Cluster c, Annotation ann){

@@ -21,7 +21,7 @@
             <properties>
                 <exec.args>-Xmx16G -classpath %classpath vortex.gui.frmMain</exec.args>
                 <exec.executable>java</exec.executable>
-                <exec.workingdir>C:\Users\Nikolay Samusik\OneDrive\DEV\Distributives\VorteX 5-15-2017</exec.workingdir>
+                <exec.workingdir>C:\Users\10286566\IdeaProjects\VorteX\vortex</exec.workingdir>
             </properties>
         </action>
         <action>
@@ -37,7 +37,7 @@
                 <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -Xmx16G -classpath %classpath vortex.gui.frmMain</exec.args>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
-                <exec.workingdir>C:\Users\Nikolay Samusik\OneDrive\DEV\Distributives\VorteX 5-15-2017</exec.workingdir>
+                <exec.workingdir>C:\Users\10286566\IdeaProjects\VorteX\vortex</exec.workingdir>
             </properties>
         </action>
         <action>
@@ -52,7 +52,7 @@
             <properties>
                 <exec.args>-Xmx16G -classpath %classpath vortex.gui.frmMain</exec.args>
                 <exec.executable>java</exec.executable>
-                <exec.workingdir>C:\Users\Nikolay Samusik\OneDrive\DEV\Distributives\VorteX 5-15-2017</exec.workingdir>
+                <exec.workingdir>C:\Users\10286566\IdeaProjects\VorteX\vortex</exec.workingdir>
             </properties>
         </action>
     </actions>

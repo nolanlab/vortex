@@ -8,7 +8,7 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.awt.image.ConvolveOp;
 import java.awt.image.Kernel;
-import umontreal.iro.lecuyer.probdistmulti.MultiNormalDist;
+import umontreal.ssj.probdistmulti.MultiNormalDist;
 
 /**
  *
